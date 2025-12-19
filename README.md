@@ -19,3 +19,30 @@
 - ❓ Solved and discussed **10 basic C# questions**
 
 ---
+
+## 📅 Day 2 – (19 December 2025)
+
+### 🎯 Objectives for Day 2
+By the end of Day 2, the goals were to:
+- 🧩 Gain a clear understanding of the **.NET Framework architecture**
+- 📘 Build strong fundamentals in **C# programming**
+- 🧠 Enhance **logical thinking** through structured problem-solving
+
+---
+
+### 🛠 Activities & Work Done
+- 🏗 Explored the **core components of the .NET Framework**
+- 📚 Covered essential **C# concepts**, including:
+  - Data Types  
+  - Access Modifiers  
+  - Operators
+- ✅ Solved **16 Level-1 coding problems**
+- 🔍 Practiced **12 Level-2 problem-solving questions**
+
+---
+
+### 🧠 Key Learnings
+- Developed a clear understanding of how **.NET applications function internally**
+- Strengthened knowledge of **C# syntax and operators**
+- Gained improved confidence in solving **beginner to intermediate-level problems**
+
