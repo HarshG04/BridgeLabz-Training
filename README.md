@@ -46,3 +46,36 @@ By the end of Day 2, the goals were to:
 - Strengthened knowledge of **C# syntax and operators**
 - Gained improved confidence in solving **beginner to intermediate-level problems**
 
+---
+
+## 📅 Day 3 – (20 December 2025)
+
+### 🎯 Objectives for Today
+The focus for today was to:
+- 📘 Learn and understand **Access Modifiers in C#**
+- 🔁 Revise previously learned C# concepts
+- 📖 Study and analyze **C# reference and learning materials**
+
+---
+
+### 🛠 Activities & Work Done
+- 🔐 Studied **Access Modifiers in C#**, including:
+  - Public  
+  - Private  
+  - Protected  
+  - Internal  
+  - Protected Internal
+- 🔁 Revised earlier topics such as:
+  - Data Types  
+  - Operators  
+  - Basic syntax and structure
+- 📚 Read and explored **C# study materials** to strengthen conceptual clarity
+
+---
+
+### 🧠 Key Takeaways
+- Gained a clear understanding of **how access modifiers control visibility and scope**
+- Improved retention through **revision of core C# concepts**
+- Built stronger conceptual foundations by **reviewing official and learning resources**
+
+
