@@ -78,4 +78,36 @@ The focus for today was to:
 - Improved retention through **revision of core C# concepts**
 - Built stronger conceptual foundations by **reviewing official and learning resources**
 
+---
+
+## 📅 Day 4 – (22 December 2025)
+### 🎯 Objectives for Today
+The main goals for today were to:
+- 📘 Understand **control flow statements** in C#
+- 🔀 Learn decision-making constructs
+- 🔁 Practice looping techniques through problem-solving
+
+---
+
+### 🛠 Activities & Work Done
+- 🔀 Studied **conditional statements**, including:
+  - `if`
+  - `else if`
+  - `else`
+  - `switch`
+- 🔁 Learned and practiced **looping constructs**:
+  - `for`
+  - `while`
+  - `do-while`
+  - `foreach`
+- 🧩 Solved **multiple coding problems** using control flow and loops
+
+---
+
+### 🧠 Key Takeaways
+- Gained clarity on **how program execution flows based on conditions**
+- Developed a strong understanding of **when to use different loops**
+- Improved problem-solving skills by applying control flow concepts in practice
+
+
 
