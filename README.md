@@ -109,5 +109,30 @@ The main goals for today were to:
 - Developed a strong understanding of **when to use different loops**
 - Improved problem-solving skills by applying control flow concepts in practice
 
+---
 
+## 📅 Day 5 – (23 December 2025)
+
+### 🎯 Objectives for Today
+The focus of today’s learning was to:
+- 📘 Understand the concept of **arrays** in C#
+- 🧩 Learn how to create and use different types of arrays
+- 🛠 Strengthen problem-solving skills using arrays
+
+---
+
+### 🛠 Activities & Work Done
+- 📌 Studied **arrays** and their importance in storing multiple values
+- 🔢 Learned **1D arrays** and their operations
+- 🧮 Explored **multi-dimensional arrays**
+- 🏗 Practiced **array creation and initialization**
+- 🧩 Solved multiple **array-based problems**
+- ✅ Completed the **assignment focused on arrays**
+
+---
+
+### 🧠 Key Takeaways
+- Clear understanding of **how arrays work internally**
+- Improved confidence in solving **array-related problems**
+- Better ability to choose appropriate array types based on the problem
 
