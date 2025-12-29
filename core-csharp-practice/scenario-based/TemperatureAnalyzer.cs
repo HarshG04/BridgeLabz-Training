@@ -108,8 +108,8 @@ class Program
         while (true)
         {
             Console.WriteLine("\n==== MAIN MENU ====");
-            Console.WriteLine("1. Temperature Analyzer (Random Data)");
-            Console.WriteLine("2. Student Score Manager (Random Data)");
+            Console.WriteLine("1. Temperature Analyzer");
+            Console.WriteLine("2. Student Score Manager");
             Console.WriteLine("3. Exit");
             Console.Write("Select option: ");
 
