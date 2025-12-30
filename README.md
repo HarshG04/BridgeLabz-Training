@@ -136,3 +136,81 @@ The focus of today’s learning was to:
 - Improved confidence in solving **array-related problems**
 - Better ability to choose appropriate array types based on the problem
 
+---
+
+## 📅 Day 6 — 24 December 2025
+
+### 🎯 Learning Goals
+- Understand methods in C#
+- Learn how to define and call methods
+- Use parameters and return values
+- Solve problems using methods
+
+### 📚 Methods Overview
+A method is a block of code that performs a specific task.  
+Methods help in organizing code, improving readability, and promoting reusability.
+
+### 🔹 Types of Methods
+- **Void Methods**: Perform an action but do not return a value  
+- **Return Type Methods**: Perform an action and return a value  
+- **Methods with Parameters**: Accept input values to process data  
+- **Methods without Parameters**: Execute tasks without external input
+
+### 🧠 Key Takeaways
+- Methods reduce code duplication
+- Parameters make methods flexible
+- Return values help in processing results
+- Methods improve code structure and maintainability
+
+---
+
+## 📅 Day 7 — 26 December 2025
+
+### 🎯 Learning Goals
+- Understand strings in C#
+- Learn string methods
+- Practice string-based logic
+
+### 📚 Strings Overview
+A **string** is a sequence of characters used to store text.  
+Strings in C# are **immutable**.
+
+### 🔹 Topics Covered
+- String declaration & initialization
+- Common string methods
+- Character traversal
+- String manipulation
+
+### 🧠 Key Takeaways
+- Strings are immutable
+- Built-in methods simplify text processing
+- String logic is essential for real-world applications
+
+---
+
+## 📅 Day 8 — 29 December 2025
+
+### 🎯 Learning Goals
+- Understand the basics of **Object-Oriented Programming (OOP)**
+- Learn how OOP improves code structure
+- Relate OOP with previously learned C# concepts
+
+### 📚 Introduction to OOP
+**Object-Oriented Programming (OOP)** organizes programs using **classes** and **objects**, making code modular, reusable, and easy to maintain.
+
+### 🔹 Core OOP Concepts (Overview)
+- **Class**: Blueprint that defines data and behavior
+- **Object**: Instance of a class
+- **Encapsulation**: Binding data and methods together
+- **Abstraction**: Showing only essential details
+
+### 🔗 Applying Previous Concepts in OOP
+- Variables become **class fields**
+- Methods become **class behaviors**
+- Arrays and strings are handled inside classes
+- Programs are structured into logical units
+
+### 🧠 Key Takeaways
+- OOP improves code organization and readability
+- Classes group related data and logic
+- Solved scenario-based problems using previously learned concepts
