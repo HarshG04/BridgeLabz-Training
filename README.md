@@ -214,3 +214,42 @@ Strings in C# are **immutable**.
 - OOP improves code organization and readability
 - Classes group related data and logic
 - Solved scenario-based problems using previously learned concepts
+
+---
+
+## 📅 Day 9 — 30 December 2025
+
+### 🎯 Learning Goals
+- Understand the concept of **constructors** in C#
+- Learn the **basics and purpose** of constructors
+- Identify different **types of constructors**
+- Understand **objects and instances** in OOP
+
+### 📚 Constructors Overview
+A **constructor** is a special member of a class that is automatically invoked when an object is created.  
+Its primary role is to **initialize class data members**.
+
+### 🔹 Basics of Constructors
+- Constructor name is the **same as the class name**
+- It does **not return any value**
+- It runs automatically during object creation
+- Used to set initial values for fields
+
+### 🔹 Types of Constructors
+- **Default Constructor**: Initializes objects with default values  
+- **Parameterized Constructor**: Initializes objects with user-defined values  
+- **Constructor Overloading**: Multiple constructors with different parameters in the same class  
+
+### 🔹 Objects and Instances
+- A **class** is a blueprint
+- An **object (instance)** is a real entity created from a class
+- Each instance has its **own separate data**
+- Constructors run once per object creation
+
+### 🧠 Key Takeaways
+- Constructors ensure objects start in a valid state
+- They improve clarity, safety, and structure of code
+- Constructor types offer flexibility in object creation
+- Understanding instances is key to mastering OOP
+
+---
