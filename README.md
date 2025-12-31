@@ -138,7 +138,7 @@ The focus of today’s learning was to:
 
 ---
 
-## 📅 Day 6 — 24 December 2025
+## 📅 Day 6 - 24 December 2025
 
 ### 🎯 Learning Goals
 - Understand methods in C#
@@ -164,7 +164,7 @@ Methods help in organizing code, improving readability, and promoting reusabilit
 
 ---
 
-## 📅 Day 7 — 26 December 2025
+## 📅 Day 7 - 26 December 2025
 
 ### 🎯 Learning Goals
 - Understand strings in C#
@@ -188,7 +188,7 @@ Strings in C# are **immutable**.
 
 ---
 
-## 📅 Day 8 — 29 December 2025
+## 📅 Day 8 - 29 December 2025
 
 ### 🎯 Learning Goals
 - Understand the basics of **Object-Oriented Programming (OOP)**
@@ -217,7 +217,7 @@ Strings in C# are **immutable**.
 
 ---
 
-## 📅 Day 9 — 30 December 2025
+## 📅 Day 9 - 30 December 2025
 
 ### 🎯 Learning Goals
 - Understand the concept of **constructors** in C#
