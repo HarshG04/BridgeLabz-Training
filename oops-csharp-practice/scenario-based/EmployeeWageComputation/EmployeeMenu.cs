@@ -15,35 +15,42 @@ namespace EmployeeWage
 
             while (true)
             {
-                Console.WriteLine("\nEmployee Menu");
+                Console.WriteLine("\n==========Employee Menu==========");
                 Console.WriteLine("1. Add Employee");
-                Console.WriteLine("2. View Employee Toadys Attandance");
-                Console.WriteLine("3. View Employee Daily Wage");
-                Console.WriteLine("4. View Part Time Employee Daily Wage");
-                Console.WriteLine("5. View Employee Monthly Wage");
-                Console.WriteLine("6. Exit");
-
+                Console.WriteLine("2. View All Employees");
+                Console.WriteLine("3. View Employee Toadys Attandance");
+                Console.WriteLine("4. Calculate Employee Daily Wage");
+                Console.WriteLine("5. Calculate Part Time Employee Daily Wage");
+                Console.WriteLine("6. Calculate Employee Monthly Wage");
+                Console.WriteLine("7. Calculate Wage");
+                Console.WriteLine("8. Exit");
+                Console.Write("Enter Choise: ");
                 int option = Convert.ToInt32(Console.ReadLine());
-                //UC-4 Applying Switch
+
                 switch (option)
                 {
                     case 1:
                         employeeUtility.AddEmployee();
                         break;
                     case 2:
-                        employeeUtility.CheckAttandance();
+                        employeeUtility.DisplayAllEmployees();
                         break;
                     case 3:
-                        employeeUtility.CalculateDailyWage();
+                        employeeUtility.CheckAttandance();
                         break;
                     case 4:
-                        employeeUtility.CalculatePartTimeWage();
+                        employeeUtility.CalculateDailyWage();
                         break;
                     case 5:
+                        employeeUtility.CalculatePartTimeWage();
+                        break;
+                    case 6:
                         employeeUtility.CalculateMonthlyWage();
                         break;
-                        
-                    case 6: return;
+                    case 7:
+                        employeeUtility.CalculateWage();
+                        break;
+                    case 8: return;
                     default: break;
                 }
             }
