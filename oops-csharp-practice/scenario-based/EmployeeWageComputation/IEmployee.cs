@@ -13,5 +13,8 @@ namespace EmployeeWage
 
         // UC-1
         void CheckAttandance();
+
+        // UC-2
+        void CalculateDailyWage();
     }
 }

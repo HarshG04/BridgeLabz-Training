@@ -11,6 +11,8 @@ namespace EmployeeWage
         private Employee[] employees = new Employee[10];
         private int idx = 0;
         private static Random random = new Random();
+        private int WagePerDay = 20;
+        private int FullDayHour = 8;
         public void AddEmployee()
         {
             if (idx >= employees.Length)
@@ -72,6 +74,13 @@ namespace EmployeeWage
             }
 
             Console.WriteLine($"Is Present Today: {employees[eId].IsPresent}");
+        }
+
+        public void CalculateDailyWage()
+        {
+            Console.WriteLine("All Employeess Daily Wage: ");
+            int dailyWage = WagePerDay * FullDayHour;
+            Console.WriteLine($"Daily Wage : {dailyWage}");
         }
     }
 

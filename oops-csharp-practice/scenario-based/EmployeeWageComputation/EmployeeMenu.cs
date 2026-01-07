@@ -18,7 +18,8 @@ namespace EmployeeWage
                 Console.WriteLine("\nEmployee Menu");
                 Console.WriteLine("1. Add Employee");
                 Console.WriteLine("2. View Employee Toadys Attandance");
-                Console.WriteLine("3. Exit");
+                Console.WriteLine("3. View Employee Daily Wage");
+                Console.WriteLine("4. Exit");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -30,7 +31,10 @@ namespace EmployeeWage
                     case 2:
                         employeeUtility.CheckAttandance();
                         break;
-                    case 3: return;
+                    case 3:
+                        employeeUtility.CalculateDailyWage();
+                        break;
+                    case 4: return;
                     default: break;
                 }
             }
