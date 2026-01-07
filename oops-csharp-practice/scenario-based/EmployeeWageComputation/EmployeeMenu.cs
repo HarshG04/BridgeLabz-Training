@@ -20,10 +20,11 @@ namespace EmployeeWage
                 Console.WriteLine("2. View Employee Toadys Attandance");
                 Console.WriteLine("3. View Employee Daily Wage");
                 Console.WriteLine("4. View Part Time Employee Daily Wage");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. View Employee Monthly Wage");
+                Console.WriteLine("6. Exit");
 
                 int option = Convert.ToInt32(Console.ReadLine());
-
+                //UC-4 Applying Switch
                 switch (option)
                 {
                     case 1:
@@ -38,7 +39,10 @@ namespace EmployeeWage
                     case 4:
                         employeeUtility.CalculatePartTimeWage();
                         break;
-                    case 5: return;
+                    case 5:
+                        employeeUtility.CalculateMonthlyWage();
+                        break;
+                    case 6: return;
                     default: break;
                 }
             }
