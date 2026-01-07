@@ -42,6 +42,7 @@ namespace EmployeeWage
                     case 5:
                         employeeUtility.CalculateMonthlyWage();
                         break;
+                        
                     case 6: return;
                     default: break;
                 }

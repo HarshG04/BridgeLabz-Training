@@ -11,9 +11,10 @@ namespace EmployeeWage
         private Employee[] employees = new Employee[10];
         private int idx = 0;
         private static Random random = new Random();
-        private int WagePerDay = 20;
+        private int WagePerHour = 20;
         private int FullDayHour = 8;
         private int PartTimeHour = 8;
+        private int WorkingDayPerMonth = 20;
         public void AddEmployee()
         {
             if (idx >= employees.Length)
@@ -30,7 +31,7 @@ namespace EmployeeWage
             Console.Write("Enter Employee Salary: ");
             double employeeSalary = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter Employee Type [0:Regular,1:PartTime]");
+            Console.Write("Enter Employee Type [0:Regular,1:PartTime]");
             int type = Convert.ToInt32(Console.ReadLine());
 
 
@@ -81,11 +82,12 @@ namespace EmployeeWage
 
             Console.WriteLine($"Is Present Today: {employees[eId].IsPresent}");
         }
-
+            
+        //UC-2
         public void CalculateDailyWage()
         {
             Console.WriteLine("All Employeess Daily Wage: ");
-            int dailyWage = WagePerDay * FullDayHour;
+            int dailyWage = WagePerHour * FullDayHour;
             Console.WriteLine($"Daily Wage : {dailyWage}");
 
         }
@@ -94,8 +96,16 @@ namespace EmployeeWage
         public void CalculatePartTimeWage()
         {
             Console.WriteLine("Part Time Employeess Daily Wage: ");
-            int partTimeWage = WagePerDay * PartTimeHour;
+            int partTimeWage = WagePerHour * PartTimeHour;
             Console.WriteLine($"Part Time Wage : {partTimeWage}");
+        }
+
+        // UC- 5
+        public void CalculateMonthlyWage()
+        {
+            Console.WriteLine("Employeess Monthly Wage: ");
+            int monthlyWage = WorkingDayPerMonth * FullDayHour * WagePerHour;
+            Console.WriteLine($"Monthly Wage : {monthlyWage}");
         }
     }
 

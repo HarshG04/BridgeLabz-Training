@@ -19,5 +19,8 @@ namespace EmployeeWage
 
         //UC -3 
         void CalculatePartTimeWage();
+
+        // UC - 5
+        void CalculateMonthlyWage();
     }
 }
