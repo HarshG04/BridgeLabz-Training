@@ -15,6 +15,8 @@ namespace EmployeeWage
         public double EmployeeSalary { get; set; }
         public bool IsPresent { get; set; }
 
+        public string EmployeeType { get; set; }
+
         // no consturctor
 
 

@@ -13,6 +13,7 @@ namespace EmployeeWage
         private static Random random = new Random();
         private int WagePerDay = 20;
         private int FullDayHour = 8;
+        private int PartTimeHour = 8;
         public void AddEmployee()
         {
             if (idx >= employees.Length)
@@ -29,6 +30,10 @@ namespace EmployeeWage
             Console.Write("Enter Employee Salary: ");
             double employeeSalary = Convert.ToDouble(Console.ReadLine());
 
+            Console.WriteLine("Enter Employee Type [0:Regular,1:PartTime]");
+            int type = Convert.ToInt32(Console.ReadLine());
+
+
             Employee newEmployee = new Employee();
 
             newEmployee.EmployeeName = employeeName;
@@ -36,6 +41,7 @@ namespace EmployeeWage
             newEmployee.EmployeeSalary = employeeSalary;
             newEmployee.IsPresent = random.Next(2) == 1;
             newEmployee.EmployeeId = idx;
+            newEmployee.EmployeeType = (type == 0 ? "Regular" : "PartTime");
 
             employees[idx++] = newEmployee;
 
@@ -81,6 +87,15 @@ namespace EmployeeWage
             Console.WriteLine("All Employeess Daily Wage: ");
             int dailyWage = WagePerDay * FullDayHour;
             Console.WriteLine($"Daily Wage : {dailyWage}");
+
+        }
+
+        //UC-3
+        public void CalculatePartTimeWage()
+        {
+            Console.WriteLine("Part Time Employeess Daily Wage: ");
+            int partTimeWage = WagePerDay * PartTimeHour;
+            Console.WriteLine($"Part Time Wage : {partTimeWage}");
         }
     }
 

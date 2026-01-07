@@ -16,5 +16,8 @@ namespace EmployeeWage
 
         // UC-2
         void CalculateDailyWage();
+
+        //UC -3 
+        void CalculatePartTimeWage();
     }
 }

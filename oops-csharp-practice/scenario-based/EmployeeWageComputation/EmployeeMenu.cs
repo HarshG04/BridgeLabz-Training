@@ -19,7 +19,8 @@ namespace EmployeeWage
                 Console.WriteLine("1. Add Employee");
                 Console.WriteLine("2. View Employee Toadys Attandance");
                 Console.WriteLine("3. View Employee Daily Wage");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. View Part Time Employee Daily Wage");
+                Console.WriteLine("5. Exit");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
@@ -34,7 +35,10 @@ namespace EmployeeWage
                     case 3:
                         employeeUtility.CalculateDailyWage();
                         break;
-                    case 4: return;
+                    case 4:
+                        employeeUtility.CalculatePartTimeWage();
+                        break;
+                    case 5: return;
                     default: break;
                 }
             }
