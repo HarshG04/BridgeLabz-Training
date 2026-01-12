@@ -253,3 +253,290 @@ Its primary role is to **initialize class data members**.
 - Understanding instances is key to mastering OOP
 
 ---
+## 📅 Day 10 - 31 December 2025
+
+### 🎯 Learning Goals
+- Solve **scenario-based problems**  
+- Work on **Bank Manager & Math Utility** scenarios  
+- Design an **Invoice Generator**  
+- Understand basics of `this`, `static`, `sealed`, and `is` operator  
+
+## 🛠️ Activities & Work Completed
+
+### 🏦 Scenario 1: Bank Manager & Math Utility
+- Solved scenario-based problems using:
+  - Methods
+  - Variables
+  - Conditional statements
+- Used `static` methods for **Math Utility** operations
+- Focused on logical flow and correctness
+
+### 🧾 Scenario 2: Invoice Generator
+- Built an **Invoice Generator** to:
+  - Accept item details
+  - Calculate total amount
+- Practiced clean input–process–output flow
+
+### 📚 Concepts Learned
+- **`this`**: Refers to the current instance  
+- **`static`**: Used for shared methods and data  
+- **`sealed`**: Prevents inheritance  
+- **`is` Operator**: Used for type checking  
+
+### 🧠 Key Takeaways
+- Scenario-based problems improve **logical thinking**
+- `static` methods are useful for utility logic
+- Clear understanding of important C# keywords
+- Strong foundation for upcoming OOP concepts
+
+---
+
+## 📅 Day 11 - 1 January 2026
+
+### 🎯 Learning Goals
+- Understand **Class vs Object**
+- Learn basics of **UML diagrams**
+- Solve a **scenario-based problem**
+
+## 🛠️ Work Completed
+
+### 📘 Class vs Object
+- Class: blueprint defining data and behavior  
+- Object: instance created from a class  
+
+### 📐 UML Basics
+- **Class Diagram**: system structure  
+- **Object Diagram**: runtime state  
+- **Sequence Diagram**: execution flow  
+
+### ☕ Scenario: Cafeteria Menu
+- Used **arrays** to store menu items and prices  
+- Used **methods** to:
+  - Display menu  
+  - Handle user choice  
+  - Calculate total bill  
+
+### 🧠 Key Takeaways
+- Clear distinction between class and object  
+- UML helps visualize design and flow  
+- Arrays manage data, methods manage logic  
+
+---
+
+## 📅 Day 12 - 2 January 2026
+
+### 🎯 Learning Goals
+- Understand the concept of **Inheritance** in C#
+- Learn why inheritance is used in software design
+- Solve **scenario-based problems**
+- Strengthen logic using **arrays and control flow**
+
+## 📚 Concept Learned: Inheritance
+- Inheritance allows one class to **reuse properties and methods** of another
+- Helps reduce code duplication
+- Improves structure and maintainability
+- Learned at a **conceptual level**
+
+## 🛠️ Activities & Work Completed
+
+### 🚌 Scenario 1: Bus Route Tracker
+- Implemented a bus tracking system using:
+  - **Arrays** to store:
+    - Bus stop names
+    - Distance between stops
+    - Passenger travel details
+- Program flow:
+  - Bus reaches a stop
+  - Passengers **deboard** at their destination
+  - Fare calculated based on **distance travelled**
+  - New passengers **board** the bus
+- Focused on:
+  - Sequential execution
+  - Conditional logic
+  - Data handling using arrays
+
+### 🎲 Scenario 2: Lucky Draw System
+- Built a lucky draw program using:
+  - **Arrays** to store participant names
+  - Random number generation
+- Used program logic to:
+  - Register participants
+  - Select a random winner
+  - Display results
+
+## 🧠 Key Takeaways
+- Conceptual clarity of **inheritance**
+- Arrays help manage related data efficiently
+- Control flow drives real-world simulations
+- Scenario-based practice improves problem-solving skills
+
+---
+
+## 📅 Day 13 - 5 January 2026
+
+### 🎯 Learning Goals
+- Learn **Encapsulation**, **Abstraction**, and **Interfaces** in C#
+- Apply OOP concepts to **scenario-based problems**
+
+### 📚 Concepts Learned
+- **Encapsulation**: Data hiding using private fields and public properties (get/set)
+- **Abstraction**: Focus on what an object does using abstract classes and interfaces
+- **Interface**: Defines a contract that implementing classes must follow
+
+### 🛠️ Activities & Work Completed
+
+### 🏥 Hospital Patient Management System
+- Used encapsulation for patient data
+- Implemented patient types using inheritance
+- Applied **IPayable** interface for bill calculation
+
+### 🚗 Vehicle Rental Application
+- Created an abstract **Vehicle** class
+- Implemented vehicle types (Car, Bike, Truck)
+
+
+### 🧠 Key Takeaways
+- Encapsulation protects data
+- Abstraction reduces complexity
+- Interfaces improve code structure
+- OOP concepts fit real-world applications
+
+---
+
+## 📅 Day 14 - 6 January 2026
+
+### 🎯 Learning Goals
+- Strengthen problem-solving using **scenario-based programs**
+- Practice **OOP concepts** with real-world examples
+- Improve logic using **arrays and control flow**
+
+### 🛠️ Activities & Work Completed
+
+### 🐦 Scenario 1: Bird Sanctuary System
+- Designed a bird sanctuary application using:
+  - Classes to represent birds
+  - Arrays to store bird details
+- Program features:
+  - Add different bird types
+  - Display bird information
+  - Demonstrate bird behaviors
+- Focused on:
+  - Object creation
+  - Data organization
+  - Clean program flow
+
+### 📞 Scenario 2: Call Log Manager
+- Built a call log management system using:
+  - Arrays to store call details (number, message, time)
+- Program logic included:
+  - Add call records
+  - Display call history
+  - search by keyword
+  - sort by timestamp
+- Focused on:
+  - Conditional logic
+  - Iteration using loops
+  - Real-world data handling
+
+## 🧠 Key Takeaways
+- Scenario-based programs improve logical thinking
+- Arrays help manage structured data efficiently
+- Real-life systems can be modeled using simple OOP concepts
+- Practice enhances confidence in program design
+
+---
+
+## 📅 Day 15 - 7 January 2026
+
+### 🎯 Learning Goals
+- Learn the basics of **Data Structures**
+- Understand **Linked Lists** and their working
+- Solve a **scenario-based problem** using structured logic
+
+### 🛠️ Activities & Work Completed
+
+### 🔗 Topic: Introduction to Linked List
+- Learned what data structures are and why they are important
+- Studied **Linked List** as a dynamic data structure
+- Understood:
+  - Node structure (data and next reference)
+  - Head pointer and traversal
+- Identified advantages like dynamic size and efficient insertions
+
+### 💼 Scenario: Employee Wage Computation
+- Designed an employee wage computation program
+- Implemented logic for:
+  - Employee attendance
+  - Daily and monthly wage calculation
+  - Part-time and full-time scenarios
+- Focused on:
+  - Conditional logic
+  - Real-world problem modeling
+
+### 🧠 Key Takeaways
+- Linked Lists allow flexible memory usage
+- Scenario-based problems improve logic building
+- Proper data structure selection simplifies problem-solving
+
+---
+
+## 📅 Day 16 - 8 January 2026
+
+### 🎯 Learning Goals
+- Learn **Stack, Queue, HashMap, and HashSet**
+- Apply data structures to a **real-world scenario**
+
+### 🛠️ Activities & Work Completed
+
+### 📚 Topic: Stack, Queue, HashMap, HashSet
+- Studied Stack (LIFO) and Queue (FIFO)
+- Implemented basic operations for both
+- Learned HashMap for key–value storage
+- Learned HashSet for unique data handling
+
+### 🏠 Scenario: Smart Home Automation
+- Built a basic smart home system
+- Controlled devices like Light, Fan, and AC
+- Managed device states (ON/OFF)
+
+### 🧠 Key Takeaways
+- Data structures simplify real-world system design
+- Hash-based collections improve performance
+- Scenario-based learning improves problem-solving
+
+---
+
+## 📅 Day 17 - 9 January 2026
+
+### 🎯 Learning Goals
+- Understand and implement **sorting algorithms**
+- Apply sorting logic in **real-world scenarios**
+
+### 🛠️ Activities & Work Completed
+
+### 📚 Topic: Sorting Algorithms
+- Learned basic sorting techniques:
+  - Bubble Sort
+  - Selection Sort
+  - Insertion Sort
+- Understood how sorting improves data processing
+- Practiced sorting using arrays and control flow
+
+### 🏧 Scenario 1: ATM Dispenser System
+- Designed an ATM dispenser simulation
+- Managed currency notes and denominations
+- Implemented logic to:
+  - Dispense correct notes
+  - Validate withdrawal amount
+
+### 🏃 Scenario 2: Fit Tracker System
+- Built a fit tracker application
+- Managed user activity data (calories)
+
+
+### 🧠 Key Takeaways
+- Sorting algorithms organize data efficiently
+- Proper algorithm choice improves performance
+- Scenario-based practice strengthens understanding
+
+---
