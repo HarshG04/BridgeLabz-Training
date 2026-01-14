@@ -2,54 +2,38 @@ namespace AddressBookSystem
 {
     class ContactUtilityImpl : IContact
     {
+        
+        // private reference for the address book class
+        private AddressBook currentAddressBook;
 
-        // Creating a private object of My Contact Person
-        // private Contact ContactPerson;
-
-        // UC - 5
-        // Creating a Array for Storing Multiple Conatact Infromation
-
-        private Contact[] contacts;
-        private int contactIdx;
-        private int storedContacts;
-
-
-        // Method for initialising contact array capacity by user
-        public void AddAddressBookCapacity()
+        // constructors to initialising the address book reference
+        public ContactUtilityImpl(AddressBook addressBook)
         {
-            // checking if Address Book capacity is Already initialised
-            if(contacts!=null && contacts.Length > 0)
-            {
-                Console.WriteLine($"Address Book Already Has a Capacity of {contacts.Length}");
-                return;
-            }
-
-            // Getting Capacity from User
-            Console.Write("Enter Capacity For The Address Book: ");
-            int capacity = Convert.ToInt32(Console.ReadLine());
-            if(capacity>0){
-                contacts = new Contact[capacity];
-                Console.WriteLine($"Address Book Has Created With Capacity: {capacity}");
-            }
-            else
-            {
-                Console.WriteLine("Please Enter a Capacity Greater Than 0");
-            }
+            currentAddressBook = addressBook;
         }
+
+
+        // Implemented In AddressBookUtility UC-6
+        
+        // // Method for initialising contact array capacity by user
+        // public void AddAddressBookCapacity()
+        // {
+        // }
+
 
         // Method For Adding a New Contact
         // Refactoring Method Accoring To the contacts Array
         public void AddNewContact()
         {
             // checking if contacts array has not been initialised
-            if (contacts == null)
+            if (currentAddressBook.Contacts == null)
             {
                 Console.WriteLine("No Address Book Has Found");
                 return;
             }
 
             // checking for if address book has reached it limit
-            if (storedContacts >= contacts.Length)
+            if (currentAddressBook.StoredContacts >= currentAddressBook.Contacts.Length)
             {
                 Console.WriteLine("Address Book Capacity Has Reached. Can't Add More");
                 return;
@@ -76,29 +60,25 @@ namespace AddressBookSystem
             Console.Write("Enter Email Id: ");
             newContact.Email = Console.ReadLine();
 
-            // // Saving new contact details from temp object
-            // ContactPerson = newContact;
-            // Console.WriteLine("New Person's Contact Saved Successfully\n");
-
-
             
             // checking for empty space in between our contacts array
 
-            for(int i = 0; i < contactIdx; i++)
+            for(int i = 0; i < currentAddressBook.ContactIdx; i++)
             {   
                 // if empty space has found save new contact information
-                if (contacts[i] == null)
+                if (currentAddressBook.Contacts[i] == null)
                 {
                     // Saving New Contact Details inside our contact Array
-                    contacts[i] = newContact;
+                    currentAddressBook.Contacts[i] = newContact;
+                    currentAddressBook.StoredContacts++;
                     Console.WriteLine("New Person's Contact Saved Successfully\n");
                     return;
                 }
             }
 
             // Saving New Contact Details At last available space
-            contacts[contactIdx++] = newContact;
-            storedContacts++;
+            currentAddressBook.Contacts[currentAddressBook.ContactIdx++] = newContact;
+            currentAddressBook.StoredContacts++;
             Console.WriteLine("New Person's Contact Saved Successfully\n");
             
 
@@ -109,14 +89,14 @@ namespace AddressBookSystem
         public void EditContact()
         {
             // checking if contacts array has not been initialised
-            if (contacts == null )
+            if (currentAddressBook.Contacts == null )
             {
                 Console.WriteLine("No Address Book Has Found");
                 return;
             }
 
             // checking if we have any data
-            if (storedContacts == 0)
+            if (currentAddressBook.StoredContacts == 0)
             {
                 Console.WriteLine("No Data Has Found");
                 return;
@@ -152,7 +132,7 @@ namespace AddressBookSystem
 
 
             // Updating the Current Object With New Details
-            contacts[foundIdx] = updatedContact;
+            currentAddressBook.Contacts[foundIdx] = updatedContact;
             Console.WriteLine("User Contact Information Has Been Updated!!");
 
         }
@@ -161,13 +141,13 @@ namespace AddressBookSystem
         public void DeleteContact()
         {
              // checking if contacts array has not been initialised
-            if (contacts == null)
+            if (currentAddressBook.Contacts == null)
             {
                 Console.WriteLine("No Address Book Has Found");
                 return;
             }
             // checking if we have any data
-            if (storedContacts == 0)
+            if (currentAddressBook.StoredContacts == 0)
             {
                 Console.WriteLine("No Data Has Found");
                 return;
@@ -189,9 +169,9 @@ namespace AddressBookSystem
             }
 
             // Assigning The Current Object as Null
-            contacts[foundIdx] = null;
-            if(foundIdx==contactIdx-1) contactIdx--;
-            storedContacts--;
+            currentAddressBook.Contacts[foundIdx] = null;
+            if(foundIdx == currentAddressBook.ContactIdx-1) currentAddressBook.ContactIdx--;
+            currentAddressBook.StoredContacts--;
             Console.WriteLine("Contact Has Been Deleted Successfully");
         }
 
@@ -200,13 +180,13 @@ namespace AddressBookSystem
         private int SearchByFirstName()
         {
             // checking if contacts array has not been initialised
-            if (contacts == null)
+            if (currentAddressBook.Contacts == null)
             {
                 Console.WriteLine("No Address Book Has Found");
                 return -1;
             }  
             // checking if we have any data
-            if (storedContacts == 0)
+            if (currentAddressBook.StoredContacts == 0)
             {
                 Console.WriteLine("No Data Has Found");
                 return -1;
@@ -217,9 +197,9 @@ namespace AddressBookSystem
             string firstName = Console.ReadLine();
 
             // searching data in contacts array
-            for(int i = 0; i < contactIdx; i++)
+            for(int i = 0; i < currentAddressBook.ContactIdx; i++)
             {
-                if(contacts[i] !=null && contacts[i].FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase))
+                if(currentAddressBook.Contacts[i] !=null && currentAddressBook.Contacts[i].FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase))
                 {
                     return i;
                 }

@@ -10,14 +10,17 @@ namespace AddressBookSystem
     /// UC 3 : Added a New Method for Editing The Contact Information based on first name 
     /// UC 4 : Added a New Method for Deleting The Contact Information based on first name 
     /// UC 5 : Added Contacts Array , New Method SearchByName , Refactored Add, Edit and Delete methods
+    /// UC 6 : Added AddressBook class, AddressBook Utility Class, Address Book Interface
+    ///         Modified : ContactUtilityImpl class and methods, AddressBookSystemMenu class
+    ///    
     ///
     /// </summary>
 
-    class AddressBookMain
+    class AddressBookSystemMain
     {
         public static void Main(string[] args)
         {
-            AddressBookMenu addressMenu = new AddressBookMenu();
+            AddressBookSystemMenu addressMenu = new AddressBookSystemMenu();
             addressMenu.Start();
         }
     }
