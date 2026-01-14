@@ -10,6 +10,7 @@ namespace AddressBookSystem
         // Method For Adding a New Contact
         public void AddNewContact()
         {
+            // Creating a Temp Object for Storing The Data
             Contact newContact = new Contact();
 
             Console.Write("Enter First Name: ");
@@ -33,6 +34,55 @@ namespace AddressBookSystem
             ContactPerson = newContact;
             Console.WriteLine("New Person's Contact Saved Successfully\n");
 
+        }
+
+
+        //Edit Existing Person based on name
+        public void EditContact()
+        {
+            if (ContactPerson == null)
+            {
+                Console.WriteLine("No Active Contact Details Has Found!!");
+                return;
+            }
+
+            Console.Write("Enter Person First Name: ");
+            string name = Console.ReadLine();
+
+            if (!ContactPerson.FirstName.Equals(name, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Name Not Found");
+                return;
+            }
+
+            // Creating a Temp Object for Storing The Data
+            Contact updatedContact = new Contact();
+
+            Console.WriteLine("Enter New Details...");
+
+            // Getting New Details From User
+            Console.Write("Enter First Name: ");
+            updatedContact.FirstName = Console.ReadLine();
+            Console.Write("Enter Last Name: ");
+            updatedContact.LastName = Console.ReadLine();
+            Console.Write("Enter Address: ");
+            updatedContact.Address = Console.ReadLine();
+            Console.Write("Enter City: ");
+            updatedContact.City = Console.ReadLine();
+            Console.Write("Enter State: ");
+            updatedContact.State = Console.ReadLine();
+            Console.Write("Enter ZIP Code: ");
+            updatedContact.ZIP = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Phone Number: ");
+            updatedContact.PhoneNumber = Convert.ToInt64(Console.ReadLine());
+            Console.Write("Enter Email Id: ");
+            updatedContact.Email = Console.ReadLine();
+
+
+            // Updating the Current Object With New Details
+            ContactPerson = updatedContact;
+
+            Console.WriteLine("User Contact Information Has Been Updated!!");
         }
 
 
