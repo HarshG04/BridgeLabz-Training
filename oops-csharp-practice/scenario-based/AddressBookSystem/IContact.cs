@@ -7,4 +7,8 @@ interface IContact
     //UC-3 
     //Edit Existing Person based on name
     void EditContact();
+
+    //UC-4
+    //Delete Existing Person based on name
+    void DeleteContact();
 }

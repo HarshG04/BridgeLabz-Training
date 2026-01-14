@@ -40,6 +40,7 @@ namespace AddressBookSystem
         //Edit Existing Person based on name
         public void EditContact()
         {
+            // checking if any user information exists or not
             if (ContactPerson == null)
             {
                 Console.WriteLine("No Active Contact Details Has Found!!");
@@ -49,6 +50,7 @@ namespace AddressBookSystem
             Console.Write("Enter Person First Name: ");
             string name = Console.ReadLine();
 
+            // checking the user given name with saved name
             if (!ContactPerson.FirstName.Equals(name, StringComparison.OrdinalIgnoreCase))
             {
                 Console.WriteLine("Name Not Found");
@@ -83,6 +85,43 @@ namespace AddressBookSystem
             ContactPerson = updatedContact;
 
             Console.WriteLine("User Contact Information Has Been Updated!!");
+
+        }
+
+        //Delete Existing Person based on name
+        public void DeleteContact()
+        {
+            // checking if any user information exists or not
+            if (ContactPerson == null)
+            {
+                Console.WriteLine("No Active Contact Details Has Found!!");
+                return;
+            }
+
+            Console.Write("Enter Person First Name: ");
+            string name = Console.ReadLine();
+
+            // checking the user given name with saved name
+            if (!ContactPerson.FirstName.Equals(name, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Name Not Found");
+                return;
+            }
+
+            // Confirmation For Deletion
+            Console.WriteLine("Do You Want To DELETE Contact Information [y|n]");
+            char choise = Console.ReadLine()[0];
+
+            if(choise!='y')
+            {
+                Console.WriteLine("Contact Information Has Not Been Deleted");
+                return;
+            }
+
+
+            // Assigning The Current Object as Null
+            ContactPerson = null;
+            Console.WriteLine("Contact Has Been Deleted Successfully");
         }
 
 

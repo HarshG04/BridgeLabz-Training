@@ -8,6 +8,7 @@ namespace AddressBookSystem
     /// UC 1 : Created a Class Of Contact with some fields for stroing a Person's Information 
     /// UC 2 : Added a Method To Adding New Contact
     /// UC 3 : Added a New Method for Editing The Contact Information based on first name 
+    /// UC 4 : Added a New Method for Deleting The Contact Information based on first name 
     ///
     /// </summary>
 
