@@ -9,8 +9,10 @@ namespace AddressBookSystem
         public string City {get;set;}
         public string State {get;set;}
         public int ZIP {get;set;}
-        public int PhoneNumber {get;set;}
+        public long PhoneNumber {get;set;}
         public string Email {get;set;}
+
+
     }
 
 }
