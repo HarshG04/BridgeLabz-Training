@@ -1,3 +1,5 @@
+using AddressBookSystem;
+
 interface IContact
 {
     // UC-2 
@@ -11,4 +13,8 @@ interface IContact
     //UC-4
     //Delete Existing Person based on name
     void DeleteContact();
+
+    // UC-5
+    // Setting up address book capacity
+    void AddAddressBookCapacity();
 }

@@ -12,6 +12,8 @@ namespace AddressBookSystem
             // Initializing Interface Reference With ContactUtilityImpl class
             utility = new ContactUtilityImpl();
 
+            utility.AddAddressBookCapacity();
+
             while (true)
             {
                 Console.WriteLine("\n1: Add New Contact");
