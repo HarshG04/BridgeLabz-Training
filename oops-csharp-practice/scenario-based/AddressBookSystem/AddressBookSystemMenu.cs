@@ -21,10 +21,11 @@ namespace AddressBookSystem
             // Add new Book , Select Existing Book , Exit program
             while (true)
             {
-                Console.WriteLine("===========================");
-                Console.WriteLine("\n1: Add New Address Book");
+                Console.WriteLine("\n===========================");
+                Console.WriteLine("1: Add New Address Book");
                 Console.WriteLine("2: Select Address Book");
-                Console.WriteLine("3: Exit Address Book System\n");
+                Console.WriteLine("3: Search Based on City Or State");
+                Console.WriteLine("4: Exit Address Book System\n");
 
                 Console.Write("Enter Your Choise: ");
                 int ch = Convert.ToInt32(Console.ReadLine());
@@ -38,7 +39,9 @@ namespace AddressBookSystem
                             AddressBook selectedBook = addressBookUtility.SelectAddressBook();
                             if(selectedBook!=null) ContactMenu(selectedBook);
                             break;
-                    case 3 : Console.WriteLine("Exiting Address Book System...\n");
+                    case 3 : addressBookUtility.SearchByCityOrState();
+                            break;
+                    case 4 : Console.WriteLine("Exiting Address Book System...\n");
                             return;
                     default : break;
                 }
@@ -55,8 +58,8 @@ namespace AddressBookSystem
             
             while (true)
             {
-                Console.WriteLine("===========================");
-                Console.WriteLine("\n1: Add New Contact");
+                Console.WriteLine("\n===========================");
+                Console.WriteLine("1: Add New Contact");
                 Console.WriteLine("2: Edit Contact");
                 Console.WriteLine("3: Delete Contact");
                 Console.WriteLine("4: Back\n");
