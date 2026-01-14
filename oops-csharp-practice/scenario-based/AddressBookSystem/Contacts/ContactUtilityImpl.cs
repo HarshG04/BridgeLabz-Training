@@ -47,6 +47,16 @@ namespace AddressBookSystem
             newContact.FirstName = Console.ReadLine();
             Console.Write("Enter Last Name: ");
             newContact.LastName = Console.ReadLine();
+
+            //checking if Person With Same Name Exists Or Not
+            int foundIdx = SearchByName(newContact.FirstName, newContact.LastName);
+
+            if(foundIdx!=-1){
+                Console.WriteLine("Person Already Exists");
+                return;
+            }
+
+            
             Console.Write("Enter Address: ");
             newContact.Address = Console.ReadLine();
             Console.Write("Enter City: ");
@@ -85,6 +95,7 @@ namespace AddressBookSystem
         }
 
 
+
         //Edit Existing Person based on name
         public void EditContact()
         {
@@ -104,7 +115,7 @@ namespace AddressBookSystem
 
 
             // checking the user given name with saved name
-            int foundIdx = SearchByFirstName();
+            int foundIdx = SearchByName();
             if(foundIdx==-1) return;
 
             // Creating a Temp Object for Storing The Data
@@ -154,7 +165,7 @@ namespace AddressBookSystem
             }
 
             // checking the user given name with saved name
-            int foundIdx = SearchByFirstName();
+            int foundIdx = SearchByName();
             if(foundIdx==-1) return;
 
             
@@ -176,8 +187,8 @@ namespace AddressBookSystem
         }
 
 
-        // Method For Search By First Name and return the Correspondin Index Else -1 for no data found
-        private int SearchByFirstName()
+        // Method For Search By Name and return the Correspondin Index Else -1 for no data found
+        private int SearchByName()
         {
             // checking if contacts array has not been initialised
             if (currentAddressBook.Contacts == null)
@@ -193,21 +204,44 @@ namespace AddressBookSystem
             } 
 
             // getting first name from user to search
-            Console.Write("Enter First Name To Find: ");
+            Console.WriteLine("Enter First and Last To Find... ");
+            Console.Write("First Name: ");
             string firstName = Console.ReadLine();
+            Console.Write("Last Name: ");
+            string lastName = Console.ReadLine();
+            
 
+            // calling SearchByName Method
+            int foundIdx = SearchByName(firstName,lastName);
+
+            if (foundIdx == -1)
+            {
+                Console.WriteLine("No Data found");
+                return -1;
+            }
+
+            return foundIdx;
+        }
+
+
+        // Private Helper Method to Search By Name and Returning the Curresponing Index
+        private int SearchByName(string firstName,string LastName)
+        {
             // searching data in contacts array
             for(int i = 0; i < currentAddressBook.ContactIdx; i++)
             {
-                if(currentAddressBook.Contacts[i] !=null && currentAddressBook.Contacts[i].FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase))
-                {
-                    return i;
+                if(currentAddressBook.Contacts[i] != null){
+
+                    if(currentAddressBook.Contacts[i].FirstName.Equals(firstName,StringComparison.OrdinalIgnoreCase) && currentAddressBook.Contacts[i].LastName.Equals(LastName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return i;
+                    }
                 }
             }
 
-            Console.WriteLine("No Data found");
             return -1;
         }
+ 
 
     }
 }

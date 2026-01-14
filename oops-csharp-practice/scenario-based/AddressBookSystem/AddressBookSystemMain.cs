@@ -12,6 +12,7 @@ namespace AddressBookSystem
     /// UC 5 : Added Contacts Array , New Method SearchByName , Refactored Add, Edit and Delete methods
     /// UC 6 : Added AddressBook class, AddressBook Utility Class, Address Book Interface
     ///         Modified : ContactUtilityImpl class and methods, AddressBookSystemMenu class
+    /// UC 7 : Checking For Duplicate Entry By Name Before Adding a New Contact in Address book
     ///    
     ///
     /// </summary>
