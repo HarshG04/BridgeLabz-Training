@@ -43,6 +43,7 @@ namespace AddressBookSystem
             Console.WriteLine("Your New Address Book Has Created Successfully");
         }
 
+
         // Method To Select Any Existing Address Book By Name And Returning Its Reference
         public AddressBook SelectAddressBook()
         {
@@ -85,5 +86,102 @@ namespace AddressBookSystem
             }
 
         }
+    
+    
+        // method for searching person based on city or state across multiple address books
+        public void SearchByCityOrState()
+        {
+            if(addressBooks.Count == 0)
+            {
+                Console.WriteLine("No Address Books Available");
+                return;
+            }
+            
+            while(true){
+                Console.WriteLine("Search by City Or State [1: city, 2: state, 3: no search]: ");
+                Console.Write("Enter Your Choise: ");
+                int ch = Convert.ToInt32(Console.ReadLine());
+
+                switch (ch)
+                {
+                    case 1 : SearchByCity();
+                            return;
+                    case 2 : SearchByState();
+                            return;
+                    case 3 : return;
+                    default : break;
+                }
+            }
+        }
+
+        // private helper method for searching based on city
+        private void SearchByCity()
+        {
+            Console.Write("Enter city name to search: ");
+            string city = Console.ReadLine();
+
+            Console.WriteLine("\n==Person's List Based On City: ==\n");
+
+            // Accessing AddressBookName (keys)
+            foreach(string bookName in addressBooks.Keys)
+            {
+                AddressBook book = addressBooks[bookName];
+                Console.WriteLine($"\nData From Address Book : {bookName}");
+                bool isFound = false;   // To Check If any data found inside a address book or not
+
+                // Seaching Data in a perticular Address Book
+                for(int i = 0; i < book.ContactIdx; i++)
+                {
+                    if(book.Contacts[i] != null && book.Contacts[i].City.Equals(city, StringComparison.OrdinalIgnoreCase))
+                    {
+                        DisplayPersonInfo(book.Contacts[i]);
+                         isFound = true;
+                    }
+                }
+                if(!isFound) Console.WriteLine("No Data Found In This Address Book");
+            }
+        }
+
+        // private helper method for searching based on city
+        private void SearchByState()
+        {
+            Console.Write("Enter State to search: ");
+            string state = Console.ReadLine();
+
+            Console.WriteLine("\n==Person's List Based On State: ==\n");
+
+            // Accessing AddressBookName (keys)
+            foreach(string bookName in addressBooks.Keys)
+            {
+                AddressBook book = addressBooks[bookName];
+                Console.WriteLine($"\nData From Address Book : {bookName}");
+                bool isFound = false;   // To Check If any data found inside a address book or not
+
+                // Seaching Data in a perticular Address Book
+                for(int i = 0; i < book.ContactIdx; i++)
+                {
+                    if(book.Contacts[i] != null && book.Contacts[i].State.Equals(state, StringComparison.OrdinalIgnoreCase))
+                    {
+                        DisplayPersonInfo(book.Contacts[i]);
+                        isFound = true;
+                    }
+                }
+
+                if(!isFound) Console.WriteLine("No Data Found In This Address Book");
+            }
+        }
+
+        // private helper function for Displaying Contact Information
+        private void DisplayPersonInfo(Contact contact)
+        {
+            Console.WriteLine(
+                $"Name: {contact.FirstName} {contact.LastName}, " +
+                $"City: {contact.City}, State: {contact.State}, " +
+                $"Phone: {contact.PhoneNumber}, Email: {contact.Email}"
+            );
+            
+        }
+
+    
     }
 }

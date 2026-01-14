@@ -13,6 +13,7 @@ namespace AddressBookSystem
     /// UC 6 : Added AddressBook class, AddressBook Utility Class, Address Book Interface
     ///         Modified : ContactUtilityImpl class and methods, AddressBookSystemMenu class
     /// UC 7 : Checking For Duplicate Entry By Name Before Adding a New Contact in Address book
+    /// UC 8 : Create a Method Inside AddressBook Utility class to search data based on City or State Across Multiple Address Books
     ///    
     ///
     /// </summary>
