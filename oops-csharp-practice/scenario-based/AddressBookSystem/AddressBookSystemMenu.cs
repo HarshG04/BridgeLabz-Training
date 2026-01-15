@@ -66,7 +66,8 @@ namespace AddressBookSystem
                 Console.WriteLine("2: Edit Contact");
                 Console.WriteLine("3: Delete Contact");
                 Console.WriteLine("4: Sort Data Lexographicalli By Name And Display");
-                Console.WriteLine("5: Back\n");
+                Console.WriteLine("5: Sort Data By City, State or ZIP");
+                Console.WriteLine("6: Back\n");
 
                 Console.Write("Enter Choice: ");
                 int ch = Convert.ToInt32(Console.ReadLine());
@@ -81,7 +82,9 @@ namespace AddressBookSystem
                             break;
                     case 4 : contactUtility.SortByNameAndDisplay();
                             break;
-                    case 5 : Console.WriteLine("Returning to Address Book Menu ... \n");
+                    case 5 : contactUtility.SortByCityStateZip();
+                            break;
+                    case 6 : Console.WriteLine("Returning to Address Book Menu ... \n");
                                 return;
                     default : break;
                 }

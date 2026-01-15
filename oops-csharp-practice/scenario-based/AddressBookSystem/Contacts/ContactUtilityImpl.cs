@@ -57,7 +57,7 @@ namespace AddressBookSystem
             int foundIdx = SearchByName(newContact.FirstName, newContact.LastName);
 
             if(foundIdx!=-1){
-                Console.WriteLine("Person Already Exists");
+                Console.WriteLine("\nPerson Already Exists");
                 return;
             }
 
@@ -74,6 +74,7 @@ namespace AddressBookSystem
             newContact.PhoneNumber = Convert.ToInt64(Console.ReadLine());
             Console.Write("Enter Email Id: ");
             newContact.Email = Console.ReadLine();
+            Console.WriteLine();
 
             
             // checking for empty space in between our contacts array
@@ -119,8 +120,8 @@ namespace AddressBookSystem
             addressBookUtility.personByState[stateKey].AddLast(newContact);
 
 
-
-
+            // displaying newly added data
+            Console.WriteLine(newContact);
             Console.WriteLine("New Person's Contact Saved Successfully\n");
             
 
@@ -218,6 +219,9 @@ namespace AddressBookSystem
             }
             addressBookUtility.personByState[newStateKey].AddLast(updatedContact);
 
+
+            // displaying updated data
+            Console.WriteLine(currentAddressBook.Contacts[foundIdx]);
             Console.WriteLine("User Contact Information Has Been Updated!!");
         }
 
@@ -244,7 +248,9 @@ namespace AddressBookSystem
             if(foundIdx==-1) return;
 
             // Confirmation For Deletion
-            Console.WriteLine("Do You Want To DELETE Contact Information [y|n]");
+            // displaying user data
+            Console.WriteLine(currentAddressBook.Contacts[foundIdx]);
+            Console.Write("Do You Want To DELETE Contact Information [y|n]: ");
             char choise = Console.ReadLine()[0];
 
             if (choise != 'y' && choise != 'Y')
@@ -257,12 +263,11 @@ namespace AddressBookSystem
             Contact deletedContact = currentAddressBook.Contacts[foundIdx];
 
             // Assigning The Current Object as Null
-            currentAddressBook.Contacts[foundIdx] = null;
-            if(foundIdx == currentAddressBook.ContactIdx-1) 
-                currentAddressBook.ContactIdx--;
+            currentAddressBook.Contacts[foundIdx] = null;   // deleting data
+            
             currentAddressBook.StoredContacts--;
 
-            // -------- UPDATE DICTIONARIES --------
+            // updating dictionaried personBy City and State
             string cityKey = deletedContact.City.ToLower();
             string stateKey = deletedContact.State.ToLower();
 
@@ -299,7 +304,7 @@ namespace AddressBookSystem
             // checking if we have any data
             if (currentAddressBook.StoredContacts == 0)
             {
-                Console.WriteLine("No Data Has Found");
+                Console.WriteLine("\nNo Data Has Found");
                 return -1;
             } 
 
@@ -316,7 +321,7 @@ namespace AddressBookSystem
 
             if (foundIdx == -1)
             {
-                Console.WriteLine("No Data found");
+                Console.WriteLine("\nNo Data found For This Name");
                 return -1;
             }
 
@@ -387,13 +392,112 @@ namespace AddressBookSystem
             Console.WriteLine("Contacts sorted successfully by name. Printing Sorted Data ... \n");
 
             // printing sorted data
-            for (int i = 0; i < tempContacts.Length; i++)
+            for (int i = 0; i < idx; i++)
             {
                 Console.WriteLine(tempContacts[i]);
             }
         }
 
+        public void SortByCityStateZip()
+        {
+             // Checking Empty Array
+            if (currentAddressBook.StoredContacts == 0)
+            {
+                Console.WriteLine("Contacts Data is Empty...");
+                return;
+            }
+            while(true)
+            {
+                Console.Write("Please Enter Your Sorting Preference [1:City, 2:State, 3:ZIP, 4:NA]: ");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1 : SortData("City");
+                            return;
+                    case 2 : SortData("State");
+                            return;
+                    case 3 : SortData("ZIP");
+                            return;
+                    case 4 : return;
+                    default : break;
+                }
+            }
+            
+        }
+
+        private void SortData(string key)  // key -> City, State or ZIP
+        {   
+            // Checking Empty Array
+            if (currentAddressBook.StoredContacts == 0)
+            {
+                Console.WriteLine("Contacts Data is Empty...");
+                return;
+            }
+
+            // creating temp array for storing and sorting data
+            Contact[] tempContacts = new Contact[currentAddressBook.StoredContacts];
+            int idx = 0;
+
+            // copy non-null contacts to temp array
+            for (int i = 0; i < currentAddressBook.ContactIdx; i++)
+            {
+                if (currentAddressBook.Contacts[i] != null)
+                {
+                    tempContacts[idx++] = currentAddressBook.Contacts[i];
+                }
+            }
+
+            if(key.Equals("City") || key.Equals("State"))
+            {
+                // sorting - bubble sort
+                for (int i = 0; i < idx-1; i++)
+                {
+                    for (int j = i + 1; j < idx; j++)
+                    {
+                        string cityOrState1 = key.Equals("City") ? tempContacts[i].City : tempContacts[i].State;
+                        string cityOrState2 = key.Equals("City") ? tempContacts[j].City : tempContacts[j].State;
+
+                        // string comparison and swapping
+                        if (string.Compare(cityOrState1, cityOrState2, StringComparison.OrdinalIgnoreCase) > 0)
+                        {
+                            Contact temp = tempContacts[i];
+                            tempContacts[i] = tempContacts[j];
+                            tempContacts[j] = temp;
+                        }
+                    }
+                }
+            }
+            else if (key.Equals("ZIP"))
+            {
+                // sorting - bubble sort
+                for (int i = 0; i < idx-1; i++)
+                {
+                    for (int j = i + 1; j < idx; j++)
+                    {
+                        int zip1 = tempContacts[i].ZIP;
+                        int zip2 = tempContacts[j].ZIP;
+
+                        // string comparison and swapping
+                        if (zip1 > zip2)
+                        {
+                            Contact temp = tempContacts[i];
+                            tempContacts[i] = tempContacts[j];
+                            tempContacts[j] = temp;
+                        }
+                    }
+                }
+            }
 
 
+
+            Console.WriteLine($"Contacts sorted successfully by {key}. Printing Sorted Data ... \n");
+
+            // printing sorted data
+            for (int i = 0; i < idx; i++)
+            {
+                Console.WriteLine(tempContacts[i]);
+            }
+        }
     }
+
 }

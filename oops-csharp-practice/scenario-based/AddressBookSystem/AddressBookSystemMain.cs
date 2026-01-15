@@ -18,6 +18,7 @@ namespace AddressBookSystem
     ///        Modified ContactUtility class and AddressBook Utility class
     /// UC 10 : Ability To count persons based on city and state
     /// UC 11 : Add a method to Sort The contacts array lexicographically by name and display the sorted data
+    /// UC 12 : Add a method to Sort The contacts array by city, state or ZIP and display the sorted data
     ///
     /// </summary>
 

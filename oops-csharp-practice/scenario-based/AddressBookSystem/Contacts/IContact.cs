@@ -21,5 +21,8 @@ namespace AddressBookSystem
         // UC - 11
         // Sorting Contact Data Lexographically based on name and Displaying the sorted data
         void SortByNameAndDisplay();
+
+        // UC - 12
+        void SortByCityStateZip();  // method for sorting data based on city, state or zip
     }
 }

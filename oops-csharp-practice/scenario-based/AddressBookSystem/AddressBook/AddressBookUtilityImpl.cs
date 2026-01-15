@@ -14,10 +14,10 @@ namespace AddressBookSystem
         public void AddNewAddressBook()
         {
             Console.Write("Enter The Name Of Your Address Book: ");
-            string name = Console.ReadLine();
+            string name = Console.ReadLine().ToLower();
 
             // Checking If book already exists
-            if (addressBooks.ContainsKey(name.ToLower()))
+            if (addressBooks.ContainsKey(name))
             {
                 Console.WriteLine("Address Book Name Already Exists");
                 return;
@@ -25,7 +25,7 @@ namespace AddressBookSystem
 
             // creating a new AddressBook Object To Store
             AddressBook newAddressBook = new AddressBook();
-            newAddressBook.AddressBookName = name.ToLower();
+            newAddressBook.AddressBookName = name;
 
             // Setting Up the Capacity Of our Address Book
             Console.Write("Enter Capacity Of Your Address Book: ");
