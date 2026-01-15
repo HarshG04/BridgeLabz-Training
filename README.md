@@ -540,3 +540,142 @@ Its primary role is to **initialize class data members**.
 - Scenario-based practice strengthens understanding
 
 ---
+
+## 📅 Day 18 - 12 January 2026
+
+### 🎯 Learning Goals
+- Understand efficient **string handling** in C#
+- Learn and implement **searching algorithms**
+- Apply concepts through **scenario-based problems**
+
+### 🛠️ Activities & Work Completed
+
+### 📚 Topic 1: StringBuilder
+- Learned about **StringBuilder** and its advantages over `string`
+- Understood:
+  - Mutable nature of StringBuilder
+  - Performance benefits in repeated string modifications
+    
+### 📚 Topic 2: Searching Algorithms
+- Studied searching techniques:
+  - Linear Search
+  - Binary Search
+- Understood:
+  - Time complexity differences
+  - Use cases for each algorithm
+- Implemented searching using arrays and loops
+
+### 🏭 Scenario 1: Metal Factory – Pipe Cutting System
+- Designed a pipe cutting system for a metal factory
+- Managed available pipe sizes and price charts
+- Implemented logic to:
+  - Find suitable pipe sizes
+  - Handle nearest available size when exact size is not present
+  - Calculate total cost based on cuts
+
+### 🪑 Scenario 2: Custom Furniture Manufacturing
+- Built a custom furniture manufacturing system
+- Managed wooden rods and furniture dimensions
+- Implemented logic to:
+  - Validate raw material availability
+  - Calculate remaining material after cutting
+  - Ensure efficient material utilization
+
+### 💰 Scenario 3: Loan Buddy System
+- Designed a loan assistance application
+- Managed user loan details and eligibility criteria
+- Implemented logic to:
+  - Validate loan amount
+  - Display suitable loan options
+
+### 🧠 Key Takeaways
+- StringBuilder improves performance in string-heavy operations
+- Linear Search is simple but less efficient for large data
+- Binary Search is faster but requires sorted data
+- Real-world scenarios help connect theory with practical use
+
+---
+
+## 📅 Day 19 - 13 January 2026
+
+### 🎯 Learning Goals
+- Understand **Runtime Analysis Of Linear And Binary Search**
+- Learn the importance of **time complexity**
+- Apply OOP concepts through **scenario-based problems**
+
+### 📚 Concept Learned: Runtime Analysis
+- Runtime analysis measures how execution time changes with input size
+- Learned about:
+  - Best case
+  - Average case
+  - Worst case
+- Basic introduction to **Big-O notation**
+- Importance of writing efficient and scalable programs
+
+### 🛠️ Activities & Work Completed
+
+### 🎬 Scenario 1: Cinema Time
+- Developed an OOP-based cinema system
+- Implemented features:
+  - **Add Movie**
+  - **Search Movie**
+  - **Display All Movies**
+- Each movie contains:
+  - Movie name
+  - Showtime
+
+### 📚 Scenario 2: Book Buddy
+- Built an OOP-based book management system
+- Implemented features:
+  - **Add Book**
+  - **View Books**
+  - **Sort Books Alphabetically**
+  - **Search Book by Author**
+- Each book contains:
+  - Title
+  - Author
+
+## 🧠 Key Takeaways
+- Runtime analysis helps evaluate program performance
+- Searching and sorting directly impact time complexity
+- OOP helps organize data and operations clearly
+- Scenario-based problems improve both logic and design skills
+
+---
+
+## 📅 Day 20 - 14 January 2026
+
+### 🎯 Learning Goals
+- Continue working on the **Address Book System**
+- Implement features using **Use Case (UC)–based development**
+- Strengthen understanding of **C# and OOP concepts**
+
+### 📚 Project Status: Address Book System (Ongoing)
+The **Address Book System** is an ongoing, menu-driven console application being developed incrementally using multiple UCs.
+
+- Program starts from the **Main class**
+- `Main` calls the **Menu**
+- Displays *Welcome to Address Book Program*
+- Each session adds new functionality step by step
+
+### 🛠️ Use Cases Completed So Far (UC-1 to UC-8)
+
+- **UC-1**: Created an encapsulated `Contact` class with all contact fields  
+- **UC-2**: Added functionality to add a new contact  
+- **UC-3**: Implemented contact update/edit feature  
+- **UC-4**: Added option to delete a contact  
+- **UC-5**: Initialized array size to store multiple contacts  
+- **UC-6**: Added `AddressBook` class, interface, utility classes, and updated menu flow  
+- **UC-7**: Prevented duplicate contacts by checking existing names  
+- **UC-8**: Implemented search by **city or state** across all address books  
+
+### 🧠 Key Takeaways
+- UC-based development supports scalable design
+- Encapsulation ensures data safety
+- Interfaces and utilities improve maintainability
+- Large applications evolve incrementally
+
+### 🚀 Outcome
+- Continued development of a **real-world Address Book System**
+- Stronger grasp of structured program design
+- Prepared to extend remaining use cases in upcoming sessions
