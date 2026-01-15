@@ -17,5 +17,9 @@ namespace AddressBookSystem
         // UC-5
         // Setting up address book capacity
         // void AddAddressBookCapacity();
+
+        // UC - 11
+        // Sorting Contact Data Lexographically based on name and Displaying the sorted data
+        void SortByNameAndDisplay();
     }
 }

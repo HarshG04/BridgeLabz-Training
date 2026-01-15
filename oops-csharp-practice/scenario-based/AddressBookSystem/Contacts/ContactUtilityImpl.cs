@@ -154,10 +154,15 @@ namespace AddressBookSystem
 
             Console.WriteLine("Enter New Details...");
 
-            Console.Write("Enter First Name: ");
-            updatedContact.FirstName = Console.ReadLine();
-            Console.Write("Enter Last Name: ");
-            updatedContact.LastName = Console.ReadLine();
+            // Console.Write("Enter First Name: ");
+            // updatedContact.FirstName = Console.ReadLine();
+            // Console.Write("Enter Last Name: ");
+            // updatedContact.LastName = Console.ReadLine();
+
+            // assigning name as it is
+            updatedContact.FirstName = currentAddressBook.Contacts[foundIdx].FirstName;
+            updatedContact.LastName = currentAddressBook.Contacts[foundIdx].LastName;
+
             Console.Write("Enter Address: ");
             updatedContact.Address = Console.ReadLine();
             Console.Write("Enter City: ");
@@ -336,7 +341,59 @@ namespace AddressBookSystem
 
             return -1;
         }
- 
+
+
+        // Method for sorting the contacts data lexographically based on name
+        public void SortByNameAndDisplay()
+        {
+            // Checking Empty Array
+            if (currentAddressBook.StoredContacts == 0)
+            {
+                Console.WriteLine("Contacts Data is Empty...");
+                return;
+            }
+
+            // creating temp array for storing and sorting data
+            Contact[] tempContacts = new Contact[currentAddressBook.StoredContacts];
+            int idx = 0;
+
+            // copy non-null contacts to temp array
+            for (int i = 0; i < currentAddressBook.ContactIdx; i++)
+            {
+                if (currentAddressBook.Contacts[i] != null)
+                {
+                    tempContacts[idx++] = currentAddressBook.Contacts[i];
+                }
+            }
+
+            // sorting - bubble sort
+            for (int i = 0; i < idx-1; i++)
+            {
+                for (int j = i + 1; j < idx; j++)
+                {
+                    string name1 = tempContacts[i].FirstName + tempContacts[i].LastName;
+                    string name2 = tempContacts[j].FirstName + tempContacts[j].LastName;
+
+                    // string comparison and swapping
+                    if (string.Compare(name1, name2, StringComparison.OrdinalIgnoreCase) > 0)
+                    {
+                        Contact temp = tempContacts[i];
+                        tempContacts[i] = tempContacts[j];
+                        tempContacts[j] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine("Contacts sorted successfully by name. Printing Sorted Data ... \n");
+
+            // printing sorted data
+            for (int i = 0; i < tempContacts.Length; i++)
+            {
+                Console.WriteLine(tempContacts[i]);
+            }
+        }
+
+
 
     }
 }

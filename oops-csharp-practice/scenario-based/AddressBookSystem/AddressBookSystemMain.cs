@@ -17,6 +17,7 @@ namespace AddressBookSystem
     /// UC 9 : Maintaining Two More Dictionaries in AddressBookUtility PersonByCity and PersonByState
     ///        Modified ContactUtility class and AddressBook Utility class
     /// UC 10 : Ability To count persons based on city and state
+    /// UC 11 : Add a method to Sort The contacts array lexicographically by name and display the sorted data
     ///
     /// </summary>
 

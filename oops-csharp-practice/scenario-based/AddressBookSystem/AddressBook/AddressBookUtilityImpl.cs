@@ -164,11 +164,7 @@ namespace AddressBookSystem
         // private helper function for Displaying Contact Information
         private void DisplayPersonInfo(Contact contact)
         {
-            Console.WriteLine(
-                $"Name: {contact.FirstName} {contact.LastName}, " +
-                $"City: {contact.City}, State: {contact.State}, " +
-                $"Phone: {contact.PhoneNumber}, Email: {contact.Email}"
-            );
+            Console.WriteLine(contact);
             
         }
 

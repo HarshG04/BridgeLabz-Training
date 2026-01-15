@@ -12,6 +12,13 @@ namespace AddressBookSystem
         public long PhoneNumber {get;set;}
         public string Email {get;set;}
 
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName} || {Address}, {City}, {State}, {ZIP} || {PhoneNumber}, {Email}";
+        }
+
+
     }
 
 }
