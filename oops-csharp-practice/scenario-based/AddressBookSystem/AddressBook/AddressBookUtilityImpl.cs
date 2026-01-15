@@ -1,9 +1,14 @@
 namespace AddressBookSystem
 {
-    class AddAddressBookUtilityImpl : IAddressBook
+    class AddressBookUtilityImpl : IAddressBook
     {
         // Dictionary To Store All AddressBooks Reference Data With key: Address Book Name
-        Dictionary<string,AddressBook> addressBooks = new Dictionary<string, AddressBook>();
+        private Dictionary<string,AddressBook> addressBooks = new Dictionary<string, AddressBook>();
+        
+
+        
+        internal Dictionary<string,LinkedList<Contact>> personByCity = new Dictionary<string, LinkedList<Contact>>(); // mantaining a Dictionary Of City and Person
+        internal Dictionary<string,LinkedList<Contact>> personByState = new Dictionary<string, LinkedList<Contact>>(); // mantaining a Dictionary Of State and Person
 
         // Method To Add New Address Book In Dictionary
         public void AddNewAddressBook()
@@ -118,27 +123,20 @@ namespace AddressBookSystem
         private void SearchByCity()
         {
             Console.Write("Enter city name to search: ");
-            string city = Console.ReadLine();
+            string city = Console.ReadLine().ToLower();
+
+            if (!personByCity.ContainsKey(city))
+            {
+                Console.WriteLine("No person found in this city");
+                return;
+            }
 
             Console.WriteLine("\n==Person's List Based On City: ==\n");
 
-            // Accessing AddressBookName (keys)
-            foreach(string bookName in addressBooks.Keys)
+            // Accessing city key data from personByCity Dictionary
+            foreach (Contact contact in personByCity[city])
             {
-                AddressBook book = addressBooks[bookName];
-                Console.WriteLine($"\nData From Address Book : {bookName}");
-                bool isFound = false;   // To Check If any data found inside a address book or not
-
-                // Seaching Data in a perticular Address Book
-                for(int i = 0; i < book.ContactIdx; i++)
-                {
-                    if(book.Contacts[i] != null && book.Contacts[i].City.Equals(city, StringComparison.OrdinalIgnoreCase))
-                    {
-                        DisplayPersonInfo(book.Contacts[i]);
-                         isFound = true;
-                    }
-                }
-                if(!isFound) Console.WriteLine("No Data Found In This Address Book");
+                DisplayPersonInfo(contact);
             }
         }
 
@@ -146,28 +144,20 @@ namespace AddressBookSystem
         private void SearchByState()
         {
             Console.Write("Enter State to search: ");
-            string state = Console.ReadLine();
+            string state = Console.ReadLine().ToLower();
+
+            if (!personByState.ContainsKey(state))
+            {
+                Console.WriteLine("No person found in this State");
+                return;
+            }
 
             Console.WriteLine("\n==Person's List Based On State: ==\n");
 
-            // Accessing AddressBookName (keys)
-            foreach(string bookName in addressBooks.Keys)
+            // Accessing state key data from personByState Dictionary
+            foreach (Contact contact in personByState[state])
             {
-                AddressBook book = addressBooks[bookName];
-                Console.WriteLine($"\nData From Address Book : {bookName}");
-                bool isFound = false;   // To Check If any data found inside a address book or not
-
-                // Seaching Data in a perticular Address Book
-                for(int i = 0; i < book.ContactIdx; i++)
-                {
-                    if(book.Contacts[i] != null && book.Contacts[i].State.Equals(state, StringComparison.OrdinalIgnoreCase))
-                    {
-                        DisplayPersonInfo(book.Contacts[i]);
-                        isFound = true;
-                    }
-                }
-
-                if(!isFound) Console.WriteLine("No Data Found In This Address Book");
+                DisplayPersonInfo(contact);
             }
         }
 
@@ -183,5 +173,6 @@ namespace AddressBookSystem
         }
 
     
+
     }
 }

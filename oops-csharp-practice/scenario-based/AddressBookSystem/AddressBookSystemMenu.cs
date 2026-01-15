@@ -14,7 +14,7 @@ namespace AddressBookSystem
         {
             Console.WriteLine("Welcome To Address Book Program!!");
 
-            addressBookUtility = new AddAddressBookUtilityImpl();
+            addressBookUtility = new AddressBookUtilityImpl();
 
 
             // AddressBook Menu 
@@ -27,7 +27,7 @@ namespace AddressBookSystem
                 Console.WriteLine("3: Search Based on City Or State");
                 Console.WriteLine("4: Exit Address Book System\n");
 
-                Console.Write("Enter Your Choise: ");
+                Console.Write("Enter Your Choice: ");
                 int ch = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("===========================\n");
 
@@ -51,7 +51,7 @@ namespace AddressBookSystem
 
         private void ContactMenu(AddressBook addressBook)
         {
-            contactUtility = new ContactUtilityImpl(addressBook);
+            contactUtility = new ContactUtilityImpl(addressBook,(AddressBookUtilityImpl)addressBookUtility);
 
             // Contact Menu
             // Add New Contact, Edit Contact By Name, Delete Contact By Name , Back To Address Book Menu
@@ -64,7 +64,7 @@ namespace AddressBookSystem
                 Console.WriteLine("3: Delete Contact");
                 Console.WriteLine("4: Back\n");
 
-                Console.Write("Enter Choise: ");
+                Console.Write("Enter Choice: ");
                 int ch = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("===========================\n");
                 switch (ch)

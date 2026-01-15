@@ -2,14 +2,19 @@ namespace AddressBookSystem
 {
     class ContactUtilityImpl : IContact
     {
+
+        // private reference for the address book utility
+        private AddressBookUtilityImpl addressBookUtility;
         
         // private reference for the address book class
         private AddressBook currentAddressBook;
 
+
         // constructors to initialising the address book reference
-        public ContactUtilityImpl(AddressBook addressBook)
+        public ContactUtilityImpl(AddressBook addressBook,AddressBookUtilityImpl addressBookUtility)
         {
             currentAddressBook = addressBook;
+            this.addressBookUtility = addressBookUtility;
         }
 
 
@@ -73,6 +78,7 @@ namespace AddressBookSystem
             
             // checking for empty space in between our contacts array
 
+            bool isSaved = false;
             for(int i = 0; i < currentAddressBook.ContactIdx; i++)
             {   
                 // if empty space has found save new contact information
@@ -81,14 +87,40 @@ namespace AddressBookSystem
                     // Saving New Contact Details inside our contact Array
                     currentAddressBook.Contacts[i] = newContact;
                     currentAddressBook.StoredContacts++;
-                    Console.WriteLine("New Person's Contact Saved Successfully\n");
-                    return;
+                    isSaved = true;
+                    break;
                 }
             }
 
-            // Saving New Contact Details At last available space
-            currentAddressBook.Contacts[currentAddressBook.ContactIdx++] = newContact;
-            currentAddressBook.StoredContacts++;
+            if(!isSaved)
+            {
+                // Saving New Contact Details At last available space
+                currentAddressBook.Contacts[currentAddressBook.ContactIdx++] = newContact;
+                currentAddressBook.StoredContacts++;
+            }
+
+
+
+            // saving that person inside personByCity and personByState Aswell
+            // City
+            string cityKey = newContact.City.ToLower();
+            string stateKey = newContact.State.ToLower();
+            if (!addressBookUtility.personByCity.ContainsKey(cityKey))
+            {
+                addressBookUtility.personByCity[cityKey] = new LinkedList<Contact>();
+            }
+            addressBookUtility.personByCity[cityKey].AddLast(newContact);
+
+            // State
+            if (!addressBookUtility.personByState.ContainsKey(stateKey))
+            {
+                addressBookUtility.personByState[stateKey] = new LinkedList<Contact>();
+            }
+            addressBookUtility.personByState[stateKey].AddLast(newContact);
+
+
+
+
             Console.WriteLine("New Person's Contact Saved Successfully\n");
             
 
@@ -113,7 +145,6 @@ namespace AddressBookSystem
                 return;
             }
 
-
             // checking the user given name with saved name
             int foundIdx = SearchByName();
             if(foundIdx==-1) return;
@@ -123,7 +154,6 @@ namespace AddressBookSystem
 
             Console.WriteLine("Enter New Details...");
 
-            // Getting New Details From User
             Console.Write("Enter First Name: ");
             updatedContact.FirstName = Console.ReadLine();
             Console.Write("Enter Last Name: ");
@@ -141,22 +171,62 @@ namespace AddressBookSystem
             Console.Write("Enter Email Id: ");
             updatedContact.Email = Console.ReadLine();
 
+            // saving oldContact
+            Contact oldContact = currentAddressBook.Contacts[foundIdx];
 
             // Updating the Current Object With New Details
             currentAddressBook.Contacts[foundIdx] = updatedContact;
-            Console.WriteLine("User Contact Information Has Been Updated!!");
 
+            // ---- Updating in Dictionary
+            string oldCityKey = oldContact.City.ToLower();
+            string oldStateKey = oldContact.State.ToLower();
+            string newCityKey = updatedContact.City.ToLower();
+            string newStateKey = updatedContact.State.ToLower();
+
+            // remove old city entry
+            if (addressBookUtility.personByCity.ContainsKey(oldCityKey))
+            {
+                addressBookUtility.personByCity[oldCityKey].Remove(oldContact);
+                if (addressBookUtility.personByCity[oldCityKey].Count == 0)
+                    addressBookUtility.personByCity.Remove(oldCityKey);
+            }
+
+            // remove old state entry
+            if (addressBookUtility.personByState.ContainsKey(oldStateKey))
+            {
+                addressBookUtility.personByState[oldStateKey].Remove(oldContact);
+                if (addressBookUtility.personByState[oldStateKey].Count == 0)
+                    addressBookUtility.personByState.Remove(oldStateKey);
+            }
+
+            // add updated city entry
+            if (!addressBookUtility.personByCity.ContainsKey(newCityKey))
+            {
+                addressBookUtility.personByCity[newCityKey] = new LinkedList<Contact>();
+            }
+            addressBookUtility.personByCity[newCityKey].AddLast(updatedContact);
+
+            // add updated state entry
+            if (!addressBookUtility.personByState.ContainsKey(newStateKey))
+            {
+                addressBookUtility.personByState[newStateKey] = new LinkedList<Contact>();
+            }
+            addressBookUtility.personByState[newStateKey].AddLast(updatedContact);
+
+            Console.WriteLine("User Contact Information Has Been Updated!!");
         }
+
 
         //Delete Existing Person based on name
         public void DeleteContact()
         {
-             // checking if contacts array has not been initialised
+            // checking if contacts array has not been initialised
             if (currentAddressBook.Contacts == null)
             {
                 Console.WriteLine("No Address Book Has Found");
                 return;
             }
+
             // checking if we have any data
             if (currentAddressBook.StoredContacts == 0)
             {
@@ -168,7 +238,6 @@ namespace AddressBookSystem
             int foundIdx = SearchByName();
             if(foundIdx==-1) return;
 
-            
             // Confirmation For Deletion
             Console.WriteLine("Do You Want To DELETE Contact Information [y|n]");
             char choise = Console.ReadLine()[0];
@@ -179,12 +248,38 @@ namespace AddressBookSystem
                 return;
             }
 
+            // saving the referance of deleted contact 
+            Contact deletedContact = currentAddressBook.Contacts[foundIdx];
+
             // Assigning The Current Object as Null
             currentAddressBook.Contacts[foundIdx] = null;
-            if(foundIdx == currentAddressBook.ContactIdx-1) currentAddressBook.ContactIdx--;
+            if(foundIdx == currentAddressBook.ContactIdx-1) 
+                currentAddressBook.ContactIdx--;
             currentAddressBook.StoredContacts--;
+
+            // -------- UPDATE DICTIONARIES --------
+            string cityKey = deletedContact.City.ToLower();
+            string stateKey = deletedContact.State.ToLower();
+
+            // remove from city dictionary
+            if (addressBookUtility.personByCity.ContainsKey(cityKey))
+            {
+                addressBookUtility.personByCity[cityKey].Remove(deletedContact);
+                if (addressBookUtility.personByCity[cityKey].Count == 0)
+                    addressBookUtility.personByCity.Remove(cityKey);
+            }
+
+            // remove from state dictionary
+            if (addressBookUtility.personByState.ContainsKey(stateKey))
+            {
+                addressBookUtility.personByState[stateKey].Remove(deletedContact);
+                if (addressBookUtility.personByState[stateKey].Count == 0)
+                    addressBookUtility.personByState.Remove(stateKey);
+            }
+
             Console.WriteLine("Contact Has Been Deleted Successfully");
         }
+
 
 
         // Method For Search By Name and return the Correspondin Index Else -1 for no data found
