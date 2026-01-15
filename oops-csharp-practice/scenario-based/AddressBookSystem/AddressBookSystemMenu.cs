@@ -18,14 +18,15 @@ namespace AddressBookSystem
 
 
             // AddressBook Menu 
-            // Add new Book , Select Existing Book , Exit program
+            // Add new Book , Select Any Existing Book, Searching Based on City Or State, Counting Based on City Or State, Exit program
             while (true)
             {
                 Console.WriteLine("\n===========================");
                 Console.WriteLine("1: Add New Address Book");
                 Console.WriteLine("2: Select Address Book");
                 Console.WriteLine("3: Search Based on City Or State");
-                Console.WriteLine("4: Exit Address Book System\n");
+                Console.WriteLine("4: Count Based on City Or State");
+                Console.WriteLine("5: Exit Address Book System\n");
 
                 Console.Write("Enter Your Choice: ");
                 int ch = Convert.ToInt32(Console.ReadLine());
@@ -41,7 +42,9 @@ namespace AddressBookSystem
                             break;
                     case 3 : addressBookUtility.SearchByCityOrState();
                             break;
-                    case 4 : Console.WriteLine("Exiting Address Book System...\n");
+                    case 4 : addressBookUtility.CountByCityOrState();
+                            break;
+                    case 5 : Console.WriteLine("Exiting Address Book System...\n");
                             return;
                     default : break;
                 }

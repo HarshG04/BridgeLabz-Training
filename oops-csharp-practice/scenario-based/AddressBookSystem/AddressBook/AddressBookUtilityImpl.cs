@@ -172,7 +172,62 @@ namespace AddressBookSystem
             
         }
 
-    
+
+        // method for counting person based on city or state across multiple address books
+        public void CountByCityOrState()
+        {
+            if(addressBooks.Count == 0)
+            {
+                Console.WriteLine("No Address Books Available");
+                return;
+            }
+            
+            while(true){
+                Console.WriteLine("Count Contacts by City Or State [1: city, 2: state, 3: no search]: ");
+                Console.Write("Enter Your Choise: ");
+                int ch = Convert.ToInt32(Console.ReadLine());
+
+                switch (ch)
+                {
+                    case 1 : CountByCity();
+                            return;
+                    case 2 : CountByState();
+                            return;
+                    case 3 : return;
+                    default : break;
+                }
+            }
+        }
+
+        // private helper method for Count based on city
+        private void CountByCity()
+        {
+            Console.Write("Enter City Name: ");
+            string city = Console.ReadLine().ToLower();
+
+            if (!personByCity.ContainsKey(city))
+            {
+                Console.WriteLine("No person found in this city");
+                return;
+            }
+
+            Console.WriteLine($"No of Persons in City {city} : {personByCity[city].Count}");
+        }
+
+        // private helper method for Count based on State
+        private void CountByState()
+        {
+            Console.Write("Enter State Name: ");
+            string state = Console.ReadLine().ToLower();
+
+            if (!personByState.ContainsKey(state))
+            {
+                Console.WriteLine("No person found in this State");
+                return;
+            }
+
+            Console.WriteLine($"No of Persons in State {state} : {personByState[state].Count}");
+        }
 
     }
 }
