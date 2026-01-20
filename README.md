@@ -679,3 +679,124 @@ The **Address Book System** is an ongoing, menu-driven console application being
 - Continued development of a **real-world Address Book System**
 - Stronger grasp of structured program design
 - Prepared to extend remaining use cases in upcoming sessions
+
+---
+
+## 📅 Day 21 - 15 January 2026
+
+### 🎯 Learning Goals
+- Complete **UC-9 to UC-12** of the **Address Book System**
+- Apply **Doubly Linked List** and **Stack** in real-world scenarios
+- Strengthen logic using advanced data structures
+
+### 📚 Address Book System (UC-9 to UC-12)
+
+### ✅ Use Cases Completed
+- **UC-9**: View contacts by **city/state**  
+- **UC-10**: Count contacts by **city/state**  
+- **UC-11**: Sort contacts **alphabetically**  
+- **UC-12**: Sort contacts by **city/state/zip**
+
+### 🧠 Key Takeaways
+- UC-based development improves scalability  
+- Sorting and filtering enhance usability  
+- Clean structure improves maintainability  
+
+### 🌐 Scenario: Browser Buddy
+
+### 🧩 Data Structures Used
+- **Doubly Linked List**: Forward & backward page navigation  
+- **Stack**: Browser history (LIFO)
+
+### ⚙️ Features Implemented
+- Visit new page  
+- Back and forward navigation  
+- Display current page  
+- Maintain browsing history  
+
+### 🚀 Outcome
+- Completed **UC-12** of Address Book  
+- Built **Browser Buddy** using DLL & Stack  
+- Improved confidence in data structure selection  
+
+---
+
+## 📅 Day 22 - 16 January 2026
+
+### 🎯 Learning Goals
+- Apply **Circular Linked List, Queue, Linked List, HashMap**
+- Solve real-world **story-based scenarios**
+- Improve data-structure-driven problem solving
+
+### 🚦 TrafficManager – Roundabout Vehicle Flow
+
+### 🧩 Data Structures
+- **Circular Linked List**: Vehicles in roundabout  
+- **Queue**: Vehicles waiting to enter  
+
+### ⚙️ Features
+- Add/remove vehicles in circular path  
+- Handle queue overflow & underflow  
+- Print current roundabout state  
+
+### 🧠 Takeaways
+- Circular lists suit **cyclic systems**
+- Queue manages **FIFO vehicle flow**
+
+### 📚 BookShelf – Library Organization
+
+### 🧩 Data Structures
+- **HashMap**: Genre → LinkedList of books  
+- **Linked List**: Dynamic book storage  
+- **HashSet (Optional)**: Avoid duplicates  
+
+### ⚙️ Features
+- Genre-wise catalog management  
+- Efficient insert & delete  
+- Duplicate prevention  
+
+### 🚀 Outcome
+- Built **TrafficManager** and **BookShelf** systems  
+- Strengthened real-world use of linked structures  
+
+---
+
+## 📅 Day 23 - 17 January 2026
+
+### 🎯 Learning Goals
+- Apply **sorting algorithms** in real-world scenarios  
+- Choose the right algorithm based on **data size & behavior**
+
+### ⚡ FlashDealz – Product Sorting (Quick Sort)
+
+### 🧩 Concepts
+- **Quick Sort**
+- Large unsorted data
+- Performance optimization  
+
+### ⚙️ Features
+- Sort products by discount  
+- Fast average-case performance  
+
+### 🧠 Takeaways
+- Quick Sort suits **large datasets**
+- Efficient for backend systems  
+
+### 🏃 FitnessTracker – Step Ranking (Bubble Sort)
+
+### 🧩 Concepts
+- **Bubble Sort**
+- Frequent updates
+- Real-time sorting  
+
+### ⚙️ Features
+- Daily step leaderboard  
+- Simple and fast for small groups  
+
+### 🧠 Takeaways
+- Bubble Sort works well for **small, dynamic data**
+- Simplicity improves maintainability  
+
+### 🚀 Outcome
+- Implemented **Quick Sort** and **Bubble Sort**
+- Strengthened algorithm selection skills  
