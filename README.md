@@ -800,3 +800,153 @@ The **Address Book System** is an ongoing, menu-driven console application being
 ### 🚀 Outcome
 - Implemented **Quick Sort** and **Bubble Sort**
 - Strengthened algorithm selection skills  
+
+---
+
+## 📅 Day 24 - 19 January 2026
+
+### 🎯 Learning Goals
+- Understand the basics of **Generics in C#**
+- Apply **data structures** to real-world scenarios
+- Strengthen logic using **Linked List, Stack, HashMap, and Functions**
+
+### 📦 ParcelTracker – Delivery Chain Management
+
+### 📖 Story Overview
+A courier company tracks parcels through delivery stages:  
+**Packed → Shipped → In Transit → Delivered**.  
+Each stage is represented as a node in a **Singly Linked List**.
+
+### 🧩 Concepts Used
+- **Singly Linked List**
+- Forward traversal
+- Null handling
+
+### ⚙️ Features
+- Track parcel status step-by-step  
+- Add custom intermediate checkpoints  
+- Handle lost/missing parcels using null checks  
+
+### 🧠 Takeaways
+- Singly Linked List suits **one-directional workflows**
+- Proper null handling prevents runtime errors  
+
+## 📝 ExamProctor – Online Exam Review System
+
+### 📖 Story Overview
+An online exam system records student navigation using a **Stack**  
+and stores answers in a **HashMap (questionID → answer)**.  
+A function evaluates the final score upon submission.
+
+### 🧩 Concepts Used
+- **Stack**
+- **HashMap**
+- **Functions**
+
+### ⚙️ Features
+- Track question navigation (LIFO)  
+- Store answers efficiently  
+- Auto-calculate score using functions  
+
+### 🧠 Takeaways
+- Stack is ideal for **navigation tracking**
+- HashMap provides fast answer lookup  
+- Functions keep evaluation logic modular  
+
+### 🚀 Outcome
+- Learned **Generics conceptually**  
+- Built **ParcelTracker** using Singly Linked List  
+- Built **ExamProctor** using Stack & HashMap  
+- Strengthened understanding of practical data structure usage  
+
+---
+
+## 📅 Day 25 - 20 January 2026
+
+### 🎯 Learning Goals
+- Learn **Collections** in C# (conceptual)
+- Apply **sorting and backtracking algorithms**
+- Strengthen logic using **array-based scenarios**
+
+## 📚 Topic: Collections
+- Overview of C# Collections  
+- Arrays vs Collections  
+- Use cases (conceptual understanding only)
+
+### 🆔 Sorting Aadhar Numbers (Radix Sort)
+
+### 🧩 Concepts
+- **Radix Sort**
+- **Binary Search**
+- Arrays (no collections)
+
+### ⚙️ Features
+- Sort Aadhar numbers  
+- Search using Binary Search  
+- Preserve prefix order  
+
+### 🧠 Takeaways
+- Radix Sort suits **fixed-length numbers**
+- Sorting improves search efficiency  
+
+### 🔐 Password Cracker Simulator (Backtracking)
+
+### 🧩 Concepts
+- **Backtracking**
+- Recursion
+- Time–space complexity  
+
+### ⚙️ Features
+- Generate all strings of length `n`  
+- Stop on password match  
+- Observe complexity growth  
+
+### 🚀 Outcome
+- Learned collections conceptually  
+- Applied Radix Sort & Backtracking using arrays  
+- Improved algorithmic thinking
+
+---
+
+## 📅 Day 26 – 21 January 2026
+
+### 🎯 Learning Goals
+- Learn **C# Streams** (conceptual)
+- Apply **sorting and data structures** in scenarios
+- Strengthen real-world problem-solving
+
+### 📚 Topic: C# Streams
+- Stream basics for file I/O  
+- Real-world use cases  
+
+### 🎓 EduResults – Rank Sheet Generator
+
+### 🧩 Concepts
+- **Merge Sort**
+- Merging sorted lists
+- Stable sorting  
+
+### ⚙️ Features
+- Merge district-wise sorted marks  
+- Generate final rank list  
+
+### 🧠 Takeaways
+- Merge Sort suits **large datasets**
+- Stability matters in ranking  
+
+### 🛒 SmartCheckout – Supermarket Billing
+
+### 🧩 Concepts
+- **Queue**
+- **HashMap**
+
+### ⚙️ Features
+- Manage billing queue  
+- Fetch prices & update stock
+  
+### 🚀 Outcome
+- Learned **C# Streams** conceptually  
+- Applied Merge Sort & Queue–HashMap logic  
+- Improved system design understanding  
+
+---
