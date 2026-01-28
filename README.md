@@ -950,3 +950,110 @@ A function evaluates the final score upon submission.
 - Improved system design understanding  
 
 ---
+
+## 📅 Day 27 - 22 January 2026
+
+### 🎯 Learning Goals
+- Learn **Exception Handling** in C#
+- Understand why exceptions are needed in applications
+- Apply **Circular Linked List** in a real-world scenario  
+*(Exceptions learned conceptually, not used in scenario)*
+
+### 📚 Topic: Exception Handling in C#
+- Meaning of exceptions and error handling  
+- Types of errors: compile-time vs runtime  
+- Keywords introduced:
+  - `try`, `catch`, `finally`, `throw`
+- Importance of writing **safe and robust code**
+
+### 🚑 AmbulanceRoute – Emergency Patient Navigation
+
+### 📖 Story Overview
+A hospital consists of units connected in a circular path:  
+**Emergency → Radiology → Surgery → ICU → Emergency**.  
+An ambulance rotates through units to find the nearest available one for patient treatment.
+
+### 🧩 Concepts Used
+- **Circular Linked List**
+- Conditional logic  
+
+### ⚙️ Features Implemented
+- Each node represents a hospital unit  
+- Rotate through units in circular order  
+- Redirect patients until an available unit is found  
+- Remove a unit when it is under maintenance  
+
+### 🧠 Key Takeaways
+- Circular Linked Lists are ideal for **cyclic navigation**
+- Real-world routing can be modeled without breaking flow
+- Separating concept learning from implementation improves clarity  
+
+### 🚀 Outcome
+- Learned **Exception Handling** conceptually  
+- Built **AmbulanceRoute** using Circular Linked List  
+- Improved understanding of cyclic data structures  
+- Strengthened scenario-based problem-solving skills  
+
+---
+
+## 📅 Day 28 - 23 January 2026
+
+### 🎯 Learning Goals
+- Learn **Regular Expressions (Regex)** in C#
+- Understand **NUnit testing** basics
+- Explore **Reflection** in C#
+- Learn about **Annotations (Attributes)** and their usage
+
+### 📚 Topic 1: Regular Expressions (Regex)
+- Pattern matching and validation
+- Common use cases:
+  - Email validation
+  - Password rules
+  - Input format checking
+- Improved accuracy in input handling
+
+### 🧠 Takeaways
+- Regex simplifies complex string validations
+- Useful for real-world data verification
+
+### 🧪 Topic 2: NUnit Testing
+- Introduction to **unit testing**
+- Writing test cases for methods
+- Understanding:
+  - Test classes
+  - Test methods
+  - Assertions
+- Importance of automated testing
+
+### 🧠 Takeaways
+- Unit tests ensure code correctness
+- NUnit helps catch bugs early
+
+### 🔍 Topic 3: Reflection
+- Inspect classes and methods at runtime
+- Access:
+  - Class names
+  - Methods
+  - Fields
+- Dynamic behavior understanding
+
+### 🧠 Takeaways
+- Reflection enables flexible and dynamic systems
+- Useful in frameworks and tooling
+
+### 🏷️ Topic 4: Annotations (Attributes)
+- What attributes are and why they are used
+- Built-in vs custom attributes
+- Using attributes with reflection
+
+### 🧠 Takeaways
+- Attributes add metadata to code
+- Reflection + attributes power real frameworks
+
+### 🚀 Outcome
+- Learned **Regex** for validation
+- Understood **NUnit** for unit testing
+- Explored **Reflection and Annotations**
+- Built a strong foundation for advanced C# concepts  
+
+---
