@@ -1,0 +1,15 @@
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\bin\Debug\net10.0\LexicalTwist.exe
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\bin\Debug\net10.0\LexicalTwist.deps.json
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\bin\Debug\net10.0\LexicalTwist.runtimeconfig.json
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\bin\Debug\net10.0\LexicalTwist.dll
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\bin\Debug\net10.0\LexicalTwist.pdb
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\LexicalTwist.GeneratedMSBuildEditorConfig.editorconfig
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\LexicalTwist.AssemblyInfoInputs.cache
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\LexicalTwist.AssemblyInfo.cs
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\LexicalTwist.csproj.CoreCompileInputs.cache
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\LexicalTwist.sourcelink.json
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\LexicalTwist.dll
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\refint\LexicalTwist.dll
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\LexicalTwist.pdb
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\LexicalTwist.genruntimeconfig.cache
+D:\BridgeLabz-Training\collections-csharp-practice\scenario-based\LexicalTwist\obj\Debug\net10.0\ref\LexicalTwist.dll
