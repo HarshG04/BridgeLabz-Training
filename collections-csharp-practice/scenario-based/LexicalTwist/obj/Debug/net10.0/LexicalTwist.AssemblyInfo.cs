@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LexicalTwist")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+244b85294c539e26947f1c777d1b58dc14eae04a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0671436a0205a438a8af100ace694b674c6450ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("LexicalTwist")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LexicalTwist")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
