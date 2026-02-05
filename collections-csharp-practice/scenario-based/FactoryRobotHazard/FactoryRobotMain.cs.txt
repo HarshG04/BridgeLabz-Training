@@ -1,0 +1,36 @@
+﻿using System;
+namespace FactoryRobot
+{
+    public class FactoryRobotMain
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                FactoryRobotUtilityImpl Utility = new FactoryRobotUtilityImpl();
+                Console.Write("Enter Arm Precision (0.0 - 1.0): ");
+                double armPrecision = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter Worker Density (1 - 20): ");
+                int workerDensity = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Machinery State (Worn/Faulty/Critical): ");
+                string machineryState = Console.ReadLine();
+
+                double risk = Utility.CalculateHazardRisk(armPrecision, workerDensity,
+                    machineryState
+                );
+
+                Console.WriteLine("Robot Hazard Risk Score: " + risk);
+            }
+            catch (RobotSafetyException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Unexpected error: " + ex.Message);
+            }
+        }
+    }
+}
