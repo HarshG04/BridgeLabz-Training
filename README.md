@@ -1338,3 +1338,161 @@ A factory evaluates robot safety using:
 - Gained hands-on experience with **SQL commands**
 - Understood practical DBMS usage
 - Built confidence in using **MS SQL Server**  
+
+---
+
+### 📅 Day 36 - 5 February 2026
+
+### 🎯 Learning Goals
+- Deep dive into **MS SQL Server**
+- Learn and practice **Stored Procedures & Triggers**
+- Work on **SQL query part** of Health Clinic system
+
+### 📚 Topics Covered
+
+### 🗄️ Stored Procedures
+- Creating parameterized stored procedures  
+- Performing:
+  - Insert  
+  - Update  
+  - Delete  
+  - Select operations  
+- Benefits: reusability, performance, security  
+
+### ⚡ Triggers
+- Creating triggers on tables  
+- Auto-execution on:
+  - INSERT  
+  - UPDATE  
+  - DELETE  
+- Maintaining data integrity  
+
+### 🏥 Scenario: Health Clinic (SQL Only)
+
+### 🧩 Work Done
+- Designed tables:
+  - Patients  
+  - Doctors  
+  - Appointments  
+- Wrote SQL queries for CRUD operations  
+- Created stored procedures for core functionalities  
+- Implemented triggers for logging and validation  
+
+### 🚀 Outcome
+- Improved command over **advanced SQL**
+- Practiced stored procedures & triggers  
+- Strengthened database design skills  
+- Progressed in building Health Clinic backend  
+
+---
+
+### 📅 Day 37 - 6 February 2026
+
+### 🎯 Learning Goals
+- Continue development of **Health Clinic Database**
+- Strengthen **Stored Procedures & Triggers**
+- Improve query optimization and database design
+
+### 🏥 Health Clinic – Continued SQL Development
+
+### 🧩 Work Done
+- Refined existing tables (Patients, Doctors, Appointments)
+- Improved relationships using **Primary & Foreign Keys**
+- Enhanced stored procedures with:
+  - Better validation logic  
+  - Parameter handling  
+- Tested triggers for:
+  - Automatic logging  
+  - Data consistency checks  
+
+### ⚙️ Focus Areas
+- Query correctness  
+- Handling edge cases  
+- Improving database structure  
+
+### 🧠 Key Takeaways
+- Database design impacts application performance  
+- Stored procedures centralize business logic  
+- Triggers help enforce automatic rules  
+
+### 🚀 Outcome
+- Strengthened backend structure of **Health Clinic**
+- Improved confidence in writing advanced SQL queries
+- Prepared foundation for future C# integration  
+
+---
+
+### 📅 Day 38 - 7 February 2026
+
+### 🎯 Learning Goals
+- Continue working on **Health Clinic System**
+- Learn fundamentals of **ADO.NET**
+- Connect **C# application with MS SQL Server**
+
+### 📚 Topic: ADO.NET
+- Introduction to **ADO.NET architecture**
+- Core components:
+  - `SqlConnection`
+  - `SqlCommand`
+  - `SqlDataReader`
+  - `ExecuteNonQuery()`
+- Managing connection open/close properly
+- Executing stored procedures from C#
+
+### 🏥 Health Clinic – Database Integration
+
+### 🧩 Work Done
+- Connected C# console app to **Health Clinic database**
+- Executed stored procedures using ADO.NET
+- Performed:
+  - Insert patient  
+  - View records  
+  - Basic query execution  
+- Tested database connectivity and data flow
+
+### 🧠 Key Takeaways
+- ADO.NET enables communication between **C# and SQL**
+- Proper connection management is critical
+- Stored procedures improve secure database interaction
+
+### 🚀 Outcome
+- Continued Health Clinic backend development  
+- Successfully integrated **SQL with C# using ADO.NET**
+- Strengthened full-stack database handling skills  
+
+---
+
+### 📅 Day 39 - 9 February 2026
+
+### 🎯 Learning Goals
+- Continue development of **Health Clinic System**
+- Strengthen **ADO.NET integration**
+- Improve CRUD operations and exception handling
+
+### 🏥 Health Clinic – Continued Development
+
+### 🧩 Work Done
+- Enhanced CRUD operations using **ADO.NET**
+- Improved stored procedure calls from C#
+- Implemented:
+  - Search patient  
+  - View patient history  
+  - Update and delete records  
+- Tested database consistency and edge cases  
+
+### ⚙️ Focus Areas
+- Connection handling best practices  
+- Using `ExecuteNonQuery()` and `ExecuteReader()` properly  
+- Structuring service/repository-like logic  
+
+### 🧠 Key Takeaways
+- Clean separation between database and application logic improves maintainability  
+- Proper query handling prevents runtime errors  
+- Incremental development helps build robust systems  
+
+### 🚀 Outcome
+- Continued strengthening of **Health Clinic full backend**
+- Improved confidence in **ADO.NET + SQL integration**
+- Built a more stable and structured database-driven application  
+
+---
