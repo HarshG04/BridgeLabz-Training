@@ -28,9 +28,21 @@ namespace TechVille
         /// This module focuses on citizen profile management using strings and reusable methods.
         /// It demonstrates string manipulation, email validation, string-based search, and
         /// explains the difference between pass-by-value and pass-by-reference in C#.
+        /// 
+        /// Module 5 Summary:
+        /// This module implements exception handling to build a robust registration system.
+        /// It uses try-catch-finally blocks and custom exceptions to handle invalid input
+        /// gracefully and prevent application crashes.
         /// </summary>
         /// 
-        /// Module - 2
+        
+        class InvalidAgeException : Exception
+        {
+            public InvalidAgeException(string message) : base(message)
+            {
+            }
+        }
+        // Module - 2
         // static void Main(string[] args)
         // {
         //    Console.Write("Enter Number of family members : ");
@@ -197,70 +209,117 @@ namespace TechVille
         // }
 
         // Module - 4
+        // static void Main(string[] args)
+        // {
+        //     Console.Write("Enter Name : ");
+        //     string name = Console.ReadLine();
+
+        //     Console.Write(@"Enter Email (""Name@Gmail.com""): ");
+        //     string email = Console.ReadLine();
+
+        //     Console.Write("Enter Address: ");
+        //     string address = Console.ReadLine();
+
+        //     // String Formatting
+        //     name = FormatName(name);
+        //     Console.WriteLine($"Formatted Name : {name}");
+
+        //     // Email Validation
+        //     bool isValidEmail = ValidateEmail(email);
+        //     Console.WriteLine($"Is Email Valid : {isValidEmail}");
+
+        //     // Search using string
+        //     Console.Write("Enter name keyword to search: ");
+        //     string keyword = Console.ReadLine();
+
+        //     bool found = SearchCitizen(name, keyword);
+        //     Console.WriteLine($"Citizen Found: {found}");
+
+        //     // Pass by value
+        //     int age = 25;
+        //     UpdateAge(age);
+        //     Console.WriteLine($"Age after method call (pass by value): {age}");
+
+        //     // Pass by reference
+        //     UpdateAddress(ref address);
+        //     Console.WriteLine($"Updated Address (pass by reference): {address}");
+        // }
+
+        // // Method: String formatting
+        // static string FormatName(string name)
+        // {
+        //     return name.Trim().ToUpper();
+        // }
+
+        //  // Method: Email validation
+        // static bool ValidateEmail(string email)
+        // {
+        //     return email.Contains("@") && email.Contains(".");
+        // }
+
+        // // Method: Search using string
+        // static bool SearchCitizen(string name, string keyword)
+        // {
+        //     return name.Contains(keyword.ToUpper());
+        // }
+
+        // // Pass by value
+        // static void UpdateAge(int age)
+        // {
+        //     age = age + 1;
+        // }
+
+        // // Pass by reference
+        // static void UpdateAddress(ref string address)
+        // {
+        //     address = address + ", Zone A";
+        // }
+
+        // Module - 5
         static void Main(string[] args)
         {
-            Console.Write("Enter Name : ");
-            string name = Console.ReadLine();
+            try
+            {
+                Console.Write("Enter Name : ");
+                string name = Console.ReadLine();
+                
+                Console.Write("Enter Age : ");
+                int age = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write(@"Enter Email (""Name@Gmail.com""): ");
-            string email = Console.ReadLine();
+                if (age < 18)
+                {
+                    throw new InvalidAgeException("Citizen must be atleast 18 years old.");
+                }
 
-            Console.Write("Enter Address: ");
-            string address = Console.ReadLine();
+                Console.Write("Enter Email : ");
+                string email = Console.ReadLine();
 
-            // String Formatting
-            name = FormatName(name);
-            Console.WriteLine($"Formatted Name : {name}");
+                if (!email.Contains("@"))
+                {
+                    throw new FormatException("Invalid Email Format");
 
-            // Email Validation
-            bool isValidEmail = ValidateEmail(email);
-            Console.WriteLine($"Is Email Valid : {isValidEmail}");
-
-            // Search using string
-            Console.Write("Enter name keyword to search: ");
-            string keyword = Console.ReadLine();
-
-            bool found = SearchCitizen(name, keyword);
-            Console.WriteLine($"Citizen Found: {found}");
-
-            // Pass by value
-            int age = 25;
-            UpdateAge(age);
-            Console.WriteLine($"Age after method call (pass by value): {age}");
-
-            // Pass by reference
-            UpdateAddress(ref address);
-            Console.WriteLine($"Updated Address (pass by reference): {address}");
-        }
-
-        // Method: String formatting
-        static string FormatName(string name)
-        {
-            return name.Trim().ToUpper();
-        }
-
-         // Method: Email validation
-        static bool ValidateEmail(string email)
-        {
-            return email.Contains("@") && email.Contains(".");
-        }
-
-        // Method: Search using string
-        static bool SearchCitizen(string name, string keyword)
-        {
-            return name.Contains(keyword.ToUpper());
-        }
-
-        // Pass by value
-        static void UpdateAge(int age)
-        {
-            age = age + 1;
-        }
-
-        // Pass by reference
-        static void UpdateAddress(ref string address)
-        {
-            address = address + ", Zone A";
+                }
+                Console.WriteLine("\nCitizen Registered Successfully!");
+                Console.WriteLine($"Name: {name}");
+                Console.WriteLine($"Age: {age}");
+                Console.WriteLine($"Email: {email}");
+            }
+            catch (InvalidAgeException ex)
+            {
+                Console.WriteLine("Age Error: " + ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Input Format Error: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Unexpected Error: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("\nRegistration process completed.");
+            }
         }
     }
 }
