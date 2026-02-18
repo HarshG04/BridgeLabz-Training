@@ -12,22 +12,17 @@ namespace TechVille.Services
             this.Plan = plan;
         }
 
-        // Method Overriding (Runtime Polymorphism)
-        public override void ProcessService()
+        public override void Register()
         {
-            Console.WriteLine("Processing healthcare service...");
+            base.Register();
+
+            if (Plan == ServicePlan.Premium)
+                Console.WriteLine("Priority healthcare activated.");
         }
 
-        // Method Overloading (Compile-Time Polymorphism)
-        public void ProcessService(string patientName)
+        public override string ToString()
         {
-            Console.WriteLine($"Processing healthcare service for {patientName}...");
-        }
-
-        public override void DisplayServiceInfo()
-        {
-            base.DisplayServiceInfo();
-            Console.WriteLine($"Plan Type: {Plan.PlanName}");
+            return base.ToString() + $", Plan: {Plan.PlanName}";
         }
     }
 }

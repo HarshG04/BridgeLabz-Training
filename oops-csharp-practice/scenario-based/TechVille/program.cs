@@ -2,6 +2,7 @@ using System;
 using TechVille.Exceptions;
 using TechVille.Modules;
 using TechVille.Services;
+using TechVille.Interface;
 using TechVille.Utilities;
 
 namespace TechVille
@@ -165,27 +166,30 @@ namespace TechVille
         {
             Console.WriteLine("\n=== Available Services ===");
 
-            // Base class reference
-            Service[] services =
+            IService[] services =
             {
                 new HealthCareService(ServicePlan.Basic),
+                new HealthCareService(ServicePlan.Premium),
                 new EducationService(),
-                new TransportationService()
+                new TransportationService("Metro")
             };
 
-            // Runtime Polymorphism
-            foreach (Service service in services)
+            foreach (IService service in services)
             {
-                service.DisplayServiceInfo();
-                service.ProcessService();
+                service.Register();
+                service.CheckStatus();
+                service.Cancel();
                 Console.WriteLine();
             }
 
-            // Method Overloading Example
-            HealthCareService healthcare = new HealthCareService(ServicePlan.Premium);
+            Console.WriteLine("Detailed Info:\n");
 
-            healthcare.ProcessService("Kartik");
+            foreach (IService service in services)
+            {
+                Console.WriteLine(service.ToString());
+            }
 
+            Console.WriteLine();
             Service.DisplayTotalServices();
         }
     }

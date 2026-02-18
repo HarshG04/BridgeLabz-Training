@@ -10,14 +10,11 @@ namespace TechVille
             
         }
 
-        public override void ProcessService()
+        public override void Register()
         {
-            Console.WriteLine("Processing education enrollment...");
+            base.Register();
+            Console.WriteLine("Enrollment confirmed.");
         }
 
-        public void EnrollCourse()
-        {
-            Console.WriteLine("Course enrolled successfully.");
-        }
     }
 }

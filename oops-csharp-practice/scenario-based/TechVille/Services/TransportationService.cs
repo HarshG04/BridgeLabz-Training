@@ -5,14 +5,23 @@ namespace TechVille
 {
     public class TransportationService : Service
     {
-        public TransportationService() : base("Transportation Service", 300)
+        public string VehicleType { get; private set; }
+
+        public TransportationService(string vehicleType)
+            : base("Transportation Service", 300)
         {
-            
+            this.VehicleType = vehicleType;
         }
 
-        public override void ProcessService()
+        public override void Register()
         {
-            Console.WriteLine("Processing Transport Service");
+            base.Register();
+            Console.WriteLine($"Vehicle Type: {VehicleType} assigned.");
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $", Vehicle: {VehicleType}";
         }
 
     }
