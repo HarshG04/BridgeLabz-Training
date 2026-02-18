@@ -28,20 +28,6 @@ namespace TechVille
                 manager.InitializeSectors(i, sectors);
             }
 
-            // Create Service Objects
-            HealthCareService healthcare = new HealthCareService();
-            EducationService education = new EducationService();
-
-            Console.WriteLine("\n=== Available City Services ===");
-            healthcare.DisplayServiceInfo();
-            education.DisplayServiceInfo();
-
-            Console.WriteLine();
-
-            // Example Service Usage
-            healthcare.BookAppointment();
-            education.EnrollCourse();
-
             // Infinte Loop
             while (true)
             {
@@ -51,7 +37,8 @@ namespace TechVille
                 Console.WriteLine("3. Search By Name");
                 Console.WriteLine("4. Display All Citizens");
                 Console.WriteLine("5. Show Zone Data");
-                Console.WriteLine("6. Exit");
+                Console.WriteLine("6. Show Services");
+                Console.WriteLine("7. Exit");
                 Console.Write("Enter Choice : ");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -72,7 +59,10 @@ namespace TechVille
                     case 5 :
                         manager.DisplayZoneData();
                         break;
-                    case 6 : 
+                    case 6 :
+                        HandleServices();
+                        break;
+                    case 7 : 
                         Console.WriteLine("Exiting Program");
                         return;
                     default : 
@@ -169,6 +159,37 @@ namespace TechVille
                 Console.WriteLine($"Found: {found.CitizenName}");
             else
                 Console.WriteLine("Citizen Not Found.");
+        }
+
+        private static void HandleServices()
+        {
+            Console.WriteLine("\n=== Available Services ===");
+
+            // Basic Healthcare
+            HealthCareService basicHealthcare = new HealthCareService(ServicePlan.Basic);
+
+            basicHealthcare.DisplayServiceInfo();
+            basicHealthcare.BookAppointment();
+
+            Console.WriteLine();
+
+            // Premium Healthcare
+            HealthCareService premiumHealthcare = new HealthCareService(ServicePlan.Premium);
+
+            premiumHealthcare.DisplayServiceInfo();
+            premiumHealthcare.BookAppointment();
+
+            Console.WriteLine();
+
+            // Education
+            EducationService education = new EducationService();
+            education.DisplayServiceInfo();
+            education.EnrollCourse();
+
+            Console.WriteLine();
+
+            // Static counter 
+            Service.DisplayTotalServices();
         }
     }
 }
