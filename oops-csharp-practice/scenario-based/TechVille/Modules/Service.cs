@@ -16,6 +16,12 @@ namespace TechVille.Modules
             TotalServices++;
         }
 
+         // Virtual method for overriding
+        public virtual void ProcessService()
+        {
+            Console.WriteLine("Processing generic service...");
+        }
+        
         public virtual void DisplayServiceInfo()
         {
             Console.WriteLine($"Service: {ServiceName}, Fee: {ServiceFee}");

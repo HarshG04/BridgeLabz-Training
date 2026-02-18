@@ -165,30 +165,27 @@ namespace TechVille
         {
             Console.WriteLine("\n=== Available Services ===");
 
-            // Basic Healthcare
-            HealthCareService basicHealthcare = new HealthCareService(ServicePlan.Basic);
+            // Base class reference
+            Service[] services =
+            {
+                new HealthCareService(ServicePlan.Basic),
+                new EducationService(),
+                new TransportationService()
+            };
 
-            basicHealthcare.DisplayServiceInfo();
-            basicHealthcare.BookAppointment();
+            // Runtime Polymorphism
+            foreach (Service service in services)
+            {
+                service.DisplayServiceInfo();
+                service.ProcessService();
+                Console.WriteLine();
+            }
 
-            Console.WriteLine();
+            // Method Overloading Example
+            HealthCareService healthcare = new HealthCareService(ServicePlan.Premium);
 
-            // Premium Healthcare
-            HealthCareService premiumHealthcare = new HealthCareService(ServicePlan.Premium);
+            healthcare.ProcessService("Kartik");
 
-            premiumHealthcare.DisplayServiceInfo();
-            premiumHealthcare.BookAppointment();
-
-            Console.WriteLine();
-
-            // Education
-            EducationService education = new EducationService();
-            education.DisplayServiceInfo();
-            education.EnrollCourse();
-
-            Console.WriteLine();
-
-            // Static counter 
             Service.DisplayTotalServices();
         }
     }

@@ -10,6 +10,11 @@ namespace TechVille
             
         }
 
+        public override void ProcessService()
+        {
+            Console.WriteLine("Processing education enrollment...");
+        }
+
         public void EnrollCourse()
         {
             Console.WriteLine("Course enrolled successfully.");
